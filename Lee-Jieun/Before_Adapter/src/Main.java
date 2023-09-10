@@ -18,6 +18,11 @@ public class Main {
 		service.sendMessage(msg, sender, recipient);
 	}
 
+	/**
+	 * Adapter Pattern을 테스트하는 메인 함수 
+	 * 
+	 * @param args 프로그램을 실행할 때 넘겨주는 값
+	 * */
 	public static void main(String[] args) {
 		MessageService emailAdapter = new EmailServiceAdapter(new EmailService());
 		MessageService smsAdapter = new SMSServiceAdapter(new SMSService());
