@@ -9,7 +9,7 @@ public interface MessageService {
 	/**
 	 * 메시지를 수신인에게 전달하는 함수
 	 * 
-	 * @param content       전송할 메시지 내용
+	 * @param content   전송할 메시지 내용
 	 * @param sender    발신인의 이메일 주소 또는 전화번호
 	 * @param recipient 수신인의 이메일 주소 또는 전화번호
 	 * */
