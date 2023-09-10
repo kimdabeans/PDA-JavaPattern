@@ -21,10 +21,10 @@ public class EmailServiceAdapter implements MessageService {
 	}
 	
 	@Override
-	public void sendMessage(String msg, String sender, String recipient) {
+	public void sendMessage(String content, String sender, String recipient) {
 		// 이메일 메시지를 이메일 서비스에 맞게 변화하고 전송 
 		String subject = "이메일 확인부탁드립니다~";
-		String body = msg;
+		String body = content;
 		String from = sender;
 		String to = recipient;
 		emailService.sendEmail(subject, body, from, to);

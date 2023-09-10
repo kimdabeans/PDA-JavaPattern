@@ -21,9 +21,9 @@ public class SMSServiceAdapter implements MessageService {
 	}
 	
 	@Override
-	public void sendMessage(String msg, String sender, String recipient) {
+	public void sendMessage(String content, String sender, String recipient) {
 		// SMS 메시지를 SMS 서비스에 맞게 변화하고 전송 
-		String body = msg;
+		String body = content;
 		String from = sender;
 		String to = recipient;
 		smsService.sendSMS(body, from, to);
