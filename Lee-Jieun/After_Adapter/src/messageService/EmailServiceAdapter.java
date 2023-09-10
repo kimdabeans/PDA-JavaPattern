@@ -7,7 +7,7 @@ package messageService;
  * */
 public class EmailServiceAdapter implements MessageService {
 	/**
-	 * EmailService 인스턴스
+	 * EmailService 객체
 	 * */
 	private EmailService emailService;
 

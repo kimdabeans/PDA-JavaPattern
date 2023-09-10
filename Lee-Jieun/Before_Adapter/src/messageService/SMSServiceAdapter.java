@@ -7,7 +7,7 @@ package messageService;
  * */
 public class SMSServiceAdapter implements MessageService {
 	/**
-	 * SMSService 인스턴스
+	 * SMSService 객체
 	 * */
 	private SMSService smsService;
 
