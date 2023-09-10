@@ -12,9 +12,9 @@ public class EmailServiceAdapter implements MessageService {
 	private EmailService emailService;
 
 	/**
-	 * EmailService 인스턴스를 인자로 받는 EmailServiceAdapter 생성자
+	 * EmailServiceAdapter 생성자
 	 * 
-	 * @param emailService 적용시킬 EmailService 인스턴스 
+	 * @param emailService EmailService 객체  
 	 * */
 	public EmailServiceAdapter(EmailService emailService) {
 		this.emailService = emailService;
