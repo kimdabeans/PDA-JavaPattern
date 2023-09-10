@@ -12,9 +12,9 @@ public class SMSServiceAdapter implements MessageService {
 	private SMSService smsService;
 
 	/**
-	 * SMSService 인스턴스를 인자로 받는 SMSServiceAdapter 생성자
+	 * SMSServiceAdapter 생성자
 	 * 
-	 * @param smsService 적용시킬 SMSService 인스턴스 
+	 * @param smsService SMSService 객체  
 	 * */
 	public SMSServiceAdapter(SMSService smsService) {
 		this.smsService = smsService;
