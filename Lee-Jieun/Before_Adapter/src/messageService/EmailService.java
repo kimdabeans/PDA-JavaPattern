@@ -9,7 +9,7 @@ public class EmailService {
 	/**
 	 * 수신인에게 이메일을 전달하는 함수
 	 * 
-	 * @param suject 이메일 제목 
+	 * @param subject 이메일 제목 
 	 * @param body   이메일 본문 내용
 	 * @param from   발신인의 이메일 주소 
 	 * @param to     수신인의 이메일 주소 
