@@ -1,6 +1,16 @@
+/**
+ * Restaurant 클래스는 FoodOrder 인터페이스를 구현한 실제 식당 클래스입니다.
+ */
 public class Restaurant implements FoodOrder {
+    /**
+     * 주문 고객의 이름을 나타내는 변수
+     */
     private String customerName;
 
+    /**
+     * Restaurant 클래스의 기본 생성자입니다.
+     * (식당 객체 생성 과정은 설명에서 생략되었습니다.)
+     */
     public Restaurant() {
         // 식당 객체 생성
     }
