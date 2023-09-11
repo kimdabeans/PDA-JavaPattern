@@ -74,7 +74,7 @@
 
 *이때 proxy 패턴이 큰 역할을 한다!*
 
-#### proxy 패턴을 적용했 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterProxy) 
+#### proxy 패턴을 적용했을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterProxy) 
 ##### 메인 클래스와 결과를 간략히 살펴보면 다음과 같다.
 ```public class Main {
 	public static void main(String[] args) {
