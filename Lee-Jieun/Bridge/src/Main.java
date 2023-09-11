@@ -17,11 +17,14 @@ public class Main {
 		Printer color = new ColorPrinter();
         Printer blackWhite = new BlackWhitePrinter();
 
-        Publication book = new Book("디자인 패턴", color);
-        Publication magazine = new Magazine("프디아, 그것이 알고싶다", blackWhite);
+        Publication book1 = new Book("디자인 패턴", color);
+        Publication book2 = new Book("도커&쿠버네티스", blackWhite);
+        Publication magazine = new Magazine("그것이 알고싶다", blackWhite);
 
         System.out.println("=============== 책 출판 ===============");
-        book.print();
+        book1.print();
+        System.out.println();
+        book2.print();
         
         System.out.println("\n=============== 잡지 출판 ==============");
         magazine.print();
