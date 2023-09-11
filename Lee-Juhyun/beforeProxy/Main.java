@@ -7,6 +7,5 @@ public class Main {
 		StockMarket USAStock = new StockMarket("미국 주식");
 		
 		ITStock.successfulStockTrading();
-		
 	}
 }

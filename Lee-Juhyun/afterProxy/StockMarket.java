@@ -1,7 +1,7 @@
 package afterProxy;
 
 public class StockMarket implements ITrading {
-	String stock;
+	private String stock;
 	
 	StockMarket(String type){
 		stockTrading(type);
