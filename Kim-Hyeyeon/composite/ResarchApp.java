@@ -3,10 +3,9 @@ package composite;
 public class ResarchApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		PersonalStock shinhan = new PersonalStock("Shinhan", 2800.0);
-		PersonalStock naver = new PersonalStock("Naver", 3400.0);
-		PersonalStock samsung = new PersonalStock("Samsung", 5400.0);
+		PersonalStock shinhan = new PersonalStock("Shinhan", 36450.0);
+		PersonalStock naver = new PersonalStock("Naver", 211500.0);
+		PersonalStock samsung = new PersonalStock("Samsung", 70800.0);
 		
 		PersonalPortfolio john_portfolio = new PersonalPortfolio("John");
 		john_portfolio.add(naver);
@@ -16,7 +15,11 @@ public class ResarchApp {
 		yujin_portfolio.add(samsung);
 		yujin_portfolio.add(shinhan);
 		
-		System.out.println("Total price of " + yujin_portfolio.name() + "'s portfolio is " + yujin_portfolio.price());
-		System.out.println("Total price of " + john_portfolio.name() + "'s portfolio is " + john_portfolio.price());
+		System.out.println("Total price of " + yujin_portfolio.getBuyer() + "'s portfolio is " + yujin_portfolio.getPrice() + " won.");
+		System.out.println(yujin_portfolio.getBuyer() + "'s stocks are " + yujin_portfolio.getStockName() + "and that's it.");
+		
+		System.out.println("Total price of " + john_portfolio.getBuyer() + "'s portfolio is " + john_portfolio.getPrice() + " won.");
+		System.out.println(john_portfolio.getBuyer() + "'s stocks are " + john_portfolio.getStockName() + "and that's it.");
+		
 	}
 }

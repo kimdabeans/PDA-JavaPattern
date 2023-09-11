@@ -3,11 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonalPortfolio implements Stock {
-	private String name;
-    private List<Stock> stocks = new ArrayList<>();
+	private final String buyer;
+    private final List<Stock> stocks = new ArrayList<>();
 
-    public PersonalPortfolio(String name) {
-        this.name = name;
+    public PersonalPortfolio(String buyer) {
+        this.buyer = buyer;
     }
 
     public void add(Stock stock) {
@@ -15,16 +15,25 @@ public class PersonalPortfolio implements Stock {
     }
 
     @Override
-    public double price() {
+    public double getPrice() {
     	double sum = 0;
         for (Stock stock: stocks) {
-        	sum += stock.price();
+        	sum += stock.getPrice();
         }
     	return sum;
     }
 
-    @Override
-    public String name() {
-        return name;
-    }
+	@Override
+	public String getStockName() {
+		String stockNames ="";
+		for (Stock stock: stocks) {
+			stockNames+=stock.getStockName();
+			stockNames+=", ";
+		}
+		return stockNames;
+	}
+
+	public String getBuyer() {
+		return buyer;
+	}
 }
