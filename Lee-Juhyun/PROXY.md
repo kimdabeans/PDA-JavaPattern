@@ -8,6 +8,9 @@
 따라서 대상 객체(Subject)의 메소드를 직접 실행하는 것이 아닌, 
 대상 객체에 접근하기 전에 프록시(Proxy) 객체의 메서드를 접근한 후 추가적인 로직을 처리한뒤 접근하게 된다.
 
+![image](https://github.com/JZU0/Java-design-patterns/assets/97423172/d09f93d8-6b74-4ba7-b455-ab166487c1e8)
+
+
 
 #### 프록시 패턴을 사용했을 때 다음과 같은 효과를 얻을 수 있다.
 1. 보안(Security) : 프록시는 클라이언트가 작업을 수행할 수 있는 권한이 있는지 확인하고 검사 결과가 긍정적인 경우에만 요청을 대상으로 전달한다.
@@ -45,7 +48,64 @@
 
 ### 예제를 통해 살펴보자.
 
-#### 먼저 proxy 패턴을 적용하지 않았을 때 [코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/beforeProxy) 결과는 이러하다.
+주식 거래 프로그램을 만든다고 가정해보자.
+
+주식 트레이딩 시스템은 약 3초의 시간이 걸리며, 완료 됐을 경우 주식 종류를 받는다.
+
+#### 먼저 proxy 패턴을 적용하지 않았을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/beforeProxy) 
+##### 메인 클래스와 결과를 간략히 살펴보면 다음과 같다.
+```public class Main {
+	public static void main(String[] args) {
+		StockMarket ITStock = new StockMarket("IT 주식");
+		StockMarket CarStock = new StockMarket("자동차 주식");
+		StockMarket USAStock = new StockMarket("미국 주식");
+		
+		ITStock.successfulStockTrading();	
+	}
+}
+```
+
+![beforeproxy](https://github.com/JZU0/Java-design-patterns/assets/97423172/cc50b10e-0650-4992-934f-a124d22ea248)
+
+##### 실행 결과를 보면 IT 주식의 거래가 완료되기까지 시간이 많이 소요되는 것을 알 수 있다. 
+##### 다른 주식들의 거래를 수행하는 과정에서 시간을 많이 썼기 때문이다. 
+##### 이를 특정 주식을 선택하기 전까지 주식 거래를 미리 진행시키지 않고, 선택한 주식만 거래를 시키면 해결할 수 있을 것이다.
+
+*이때 proxy 패턴이 큰 역할을 한다!*
+
+#### proxy 패턴을 적용했 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterProxy) 
+##### 메인 클래스와 결과를 간략히 살펴보면 다음과 같다.
+```public class Main {
+	public static void main(String[] args) {
+		ITrading ITStock = new StockProxy("IT 주식");
+		ITrading CarStock = new StockProxy("자동차 주식");
+		ITrading USAStock = new StockProxy("미국 주식");
+		
+		ITStock.successfulStockTrading();
+	}
+}
+```
+
+![afterproxy](https://github.com/JZU0/Java-design-patterns/assets/97423172/017ead6c-4e1e-42d5-9402-2dc12f02dd78)
+
+
+##### 클라이언트 코드자체는 크게 변하지 않았고, 똑같이 3개의 주식 거래를 하는 코드에 대상 객체 대신 프록시 객체에 할당한 점이 변화된 부분이다.  
+##### 내부 동작 방식은 크게 변경 되었는데, 프록시 객체 내에서 타입 데이터를 지니고 있다가 사용자가 successfulStockTrading()를 호출하면 그때서야 대상 객체를 로드하여 타입을 저장하고 대상 객체의 successfulStockTrading() 메소드를 위임 호출함으로써 실제 메소드를 호출하는 시점에 트레이딩이 진행되기 때문에 불필요한 시간이 줄어든다.
+
+---
+
+### 코드의 전체적인 구조를 알기 위해 UML 클래스 다이어그램을 살펴보자.
+
+
+![proxyUML](https://github.com/JZU0/Java-design-patterns/assets/97423172/00998f47-6c57-4859-9021-6d2e3b0bb39d)
+
+#### Proxy 패턴을 구현하는데 있어 중요한 것은 대상 객체와 프록시 객체를 하나로 묶어주는 인터페이스를 정의하는 것이다. 때문에 StockProxy클래스와 StockMarket클래스를 동일시하기 위해 공통 인터페이스인 ITrading을 정의하였다.
+#### 여기서 StockMarket 클래스는 '본인'을 나타내는 클래스이다. StockMarket 클래스의 인스턴스 생성에 시간이 오래 걸린다는 전제로 프로그램을 작성하였기 때문에 successfulStockTrading 메소드는 무거운 작업을 나타낸다. 
+#### proxy 패턴에서 가장 중요한 StockProxy 클래스는 대리인 역할을 하며, ITrading 인터페이스를 구현한다. type은 타입을 저장하고, proxyStock 필드는 '본인'을 저장한다.
+#### Main 클래스는 StockProxy를 경유해서 StockMarket를 이용하는 클래스이다. 실행 결과를 보면 처음에는 인스턴스(본인)가 생성되지 않고, successfulStockTrading 메소드를 호출한 후에 생성되는 것을 확인할 수 있다. 
+
+
+
 
 
 
