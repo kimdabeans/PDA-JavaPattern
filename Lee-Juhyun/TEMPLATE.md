@@ -53,7 +53,7 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 
 *이때 TemplateMethod 패턴을 사용한다.*
 
-#### TemplateMethod 패턴을 적용했 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterTemplateMethod) 
+#### TemplateMethod 패턴을 적용했을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterTemplateMethod) 
 ##### 만드는 법을 비교해보자.
 |                   공통된 단계                    |
 |:-------------------------------------------:|
@@ -64,7 +64,7 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 |                   된장을 푼다                    |김치를 넣는다|
 
 
-##### 공통된 단계를 하나로 묶고, 다른 부분을 구체화하여 코드 중복을 해결한 것을 볼 수 있다.
+##### 공통된 단계를 하나로 묶고, 다른 부분을 구체화하여 중복을 최소한 것을 볼 수 있다.
 
 
 ---
@@ -73,9 +73,12 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 
 |<b>TemplateMethod UML</b> |
 | :--: |
-| ![TemplateMethodUML]()|
+| ![TemplateMethodUML](https://github.com/JZU0/Java-design-patterns/assets/97423172/869457ca-b6a6-4501-8956-9b111b36115b)|
 
-#### 
+#### Stew 클래스 안에는 makeStew 메소드가 정의되어 있고 makeStew 메소드 안에서 makeBroth, addOnions, addGreenOnions라는 세 개의 메소드와 addExtraIngredients 메소드가 사용된다.
+#### 앞의 세개의 메소드는 공통된 부분을 정의한 부분이므로 private 메소드로 변경하지 않도록 구현했다. 
+#### addExtraIngredients 메소드는 추상 메소드이고, 이 메소드를 실제로 구현하는 것은 Stew의 하위 클래스인 SoybeanPasteStew와 KimchiStew이다. 
+#### 상위 추상클래스로 로직을 공통화 하여 코드의 중복을 줄인 것을 확인할 수 있다.
 
 
 
