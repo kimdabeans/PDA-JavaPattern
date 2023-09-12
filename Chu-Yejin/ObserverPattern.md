@@ -46,7 +46,7 @@
 | StockMarket | 주식 시장을 나타내는 클래스 |
 | main | 동작 테스트용 클래스 |
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/60062ca0-58ff-42e7-beed-81efc6dc8a8e/Untitled.png)
+![Observer_UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/60062ca0-58ff-42e7-beed-81efc6dc8a8e/Untitled.png)
 
 ```java
 package Observer;

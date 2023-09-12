@@ -39,7 +39,7 @@
 | MusicApp | 음악 앱을 나타내는 클래스 |
 | main | 동작 테스트용 클래스 |
 
-![UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/1a81a678-ec96-42fe-ac1d-7595d7c77807/Untitled.png)
+![Decorator_UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/1a81a678-ec96-42fe-ac1d-7595d7c77807/Untitled.png)
 
 UML
 

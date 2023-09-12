@@ -161,7 +161,7 @@ public enum SingletonEnum {
 | Manager | 창고의 물건을 관리하는 클래스 |
 | main | 동작 테스트용 클래스 |
 
-![Untitled](%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A2%E1%84%90%E1%85%A5%E1%86%AB%20%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6%20e0ace750cbe74caca04866db7c698e94/Untitled.png)
+![Singleton_UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/94859c58-cf0f-4948-b170-284768c4c104/Untitled.png)
 
 ```java
 package Singleton;
