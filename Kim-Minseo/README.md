@@ -9,7 +9,11 @@
 | 객체 생성의 추상화와 유연성에 집중합니다. | 클래스와 객체를 조합하여 더 큰 구조를 형성합니다.  | 객체 간 상호 작용 및 책임 분배에 집중합니다.  |
 | Singleton, Abstract Factory, Factory Method, Builder, Prototype | Adapter, Composite, Decorator, Facade, Flyweight, Proxy | Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method |
 
-이 글에서는 앞으로 우리가 배울 스프링에 자주 쓰이는 디자인패턴 4가지 *-TemplateMethod, Factory Method, Proxy, Singleton-* 에 대해 살펴보겠습니다.
+이 글에서는 앞으로 우리가 배울 스프링에 자주 쓰이는 디자인패턴 4가지 *-Template Method, Factory Method, Proxy, Singleton-* 에 대해 살펴보겠습니다.
+1. [Template Method](#1-template-method)
+2. [Factory Method](#2-factory-method)
+3. [Proxy](#3-proxy)
+4. [Singleton](#4-singleton)
 
 # 1 Template Method
 <p align="center"><img width="211" alt="1-1" src="https://github.com/kimdabeans/PDA-JavaPattern/assets/83651335/961a36b7-c3e5-45c9-9da8-5401244112d8"></p>
