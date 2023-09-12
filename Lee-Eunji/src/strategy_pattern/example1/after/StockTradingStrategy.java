@@ -3,7 +3,6 @@ package strategy_pattern.example1.after;
 /**
  * 주식 매매 전략을 나타내는 구체적인 클래스입니다.
  */
-
 public class StockTradingStrategy implements TradingStrategy {
     @Override
     public void executeStrategy() {
