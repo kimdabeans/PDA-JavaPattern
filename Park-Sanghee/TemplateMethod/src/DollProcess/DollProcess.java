@@ -5,7 +5,7 @@ package DollProcess;
  * @version 1.0
  * @author Park SangHee
  **/
-abstract class DollProcess {
+public abstract class DollProcess {
 	/**
 	 * 머리 조립을 수행하는 추상 메서드
 	 **/
