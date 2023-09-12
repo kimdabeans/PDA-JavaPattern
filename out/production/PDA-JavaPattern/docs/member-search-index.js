@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"SingletonPattern","c":"SingletonPatternDocumentation","l":"SingletonPatternDocumentation()","u":"%3Cinit%3E()"}];updateSearchResults();
