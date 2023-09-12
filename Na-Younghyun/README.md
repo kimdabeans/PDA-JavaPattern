@@ -8,7 +8,7 @@
 
 #### Example01. 이벤트 별 티켓 생성하기
 
-<img src="../../Na-Younghyun/img/ticket_factory.png" alt="ticketFactory" width="80%" height="80%">   
+<img src="../Na-Younghyun/img/ticket_factory.png" alt="ticketFactory" width="80%" height="80%">   
 
 _Simulation_ 새로운 이벤트가 추가된다면? 혹은 기존 이벤트가 삭제된다면?
 
