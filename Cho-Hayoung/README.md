@@ -68,7 +68,7 @@ Builder Pattern의 또다른 형태인
 
 |  | uml | 출력 내용 입력 방법  |
 | --- | --- | --- |
-| 전 | <img src=”./Builder1.drawio.png”> | 직접 String을 생성하고, 넣어준다.  |
+| 전 | <img src="./Builder1.drawio.png"> | 직접 String을 생성하고, 넣어준다.  |
 | 후 | <img src="./Builder2.drawio.png"> | coffeeRecipe 를 생성 한 후, 해당 레시피를 출력한다.  |
 
 ### 변화 ❤️
@@ -114,7 +114,7 @@ Builder Pattern의 또다른 형태인
     
     |  | uml | 출력 내용 입력 방법  |
     | --- | --- | --- |
-    | 전 | <img src=”./Builder1.drawio.png”> | 직접 String을 생성하고, 넣어준다.  |
+    | 전 | <img src="./Builder1.drawio.png"> | 직접 String을 생성하고, 넣어준다.  |
     | 후 | <img src="./Builder2.drawio.png"> | coffeeRecipe 를 생성 한 후, 해당 레시피를 출력한다.  |
 
 coffeeRecipe 는 coffeeBuilder클래스를 내부 클래스 가집니다. 
