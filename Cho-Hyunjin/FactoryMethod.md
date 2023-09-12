@@ -357,10 +357,10 @@ Javadoc은 **FactoryMethodAfter/docs** 폴더에 있습니다. <br>
 | 클래스명 | 링크                                        |
 | --------- | ---------------------------------------- |
 | Main Class | [Main Class](./FactoryMethodAfter/docs/Main.html) |
-| Factory Class | [Factory Class](./FactoryMethodAfter/docs/Factory.html) |
-| Product Class | [Product Class](./FactoryMethodAfter/docs/Product.html) |
-| IceCream Class | [IceCream Class](./FactoryMethodAfter/docs/IceCream.html) |
-| Ice Cream Shop Class | [Ice Cream Shop Class](./FactoryMethodAfter/docs/IceCreamShop.html) |
+| Factory Class | [Factory Class](./FactoryMethodAfter/docs/framework/Factory.html) |
+| Product Class | [Product Class](./FactoryMethodAfter/docs/framework/Product.html) |
+| IceCream Class | [IceCream Class](./FactoryMethodAfter/docs/icecream/IceCream.html) |
+| IceCreamFactory Class | [IceCreamFactory Class](./FactoryMethodAfter/docs/icecream/IceCreamFactory.html) |
 
 
 
