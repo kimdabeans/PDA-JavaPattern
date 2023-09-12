@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-
+.DS_Store
 # Log file
 *.log
 
@@ -10,6 +10,10 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# IntelliJ IDEA
+*/.idea/
+.idea/
+*/.idea
 # Package Files #
 *.jar
 *.war
@@ -23,7 +27,5 @@
 hs_err_pid*
 replay_pid*
 
-out/
-gen/
-build/
-.idea/
+# intellij output
+*/out
