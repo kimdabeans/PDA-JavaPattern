@@ -1,8 +1,20 @@
 package DollProcess;
 
+/**
+ * ConcreteClass : 토끼 인형을 만드는 과정을 구현한 클래스
+ * @version 1.0
+ * @author Park SangHee
+ **/
 public class RabbitDollProcess extends DollProcess {
+	/**
+	 * 동물의 종류를 나타내는 String 인스턴스
+	 **/
 	private String animal;
 	
+	/**
+	 * 동물의 종류를 나타내는 문자열을 파라미터로 받는 RabbitDollProcess 생성자
+	 * @param animal 동물의 종류를 나타내는 문자열
+	 **/
 	public RabbitDollProcess(String animal) {
 		this.animal = animal;
 	}
