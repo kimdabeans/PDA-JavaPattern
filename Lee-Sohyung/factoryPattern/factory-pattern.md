@@ -18,8 +18,8 @@
    ├── TransportDetails.java
    └── TransportScheduler.java : 픽업 서비스를 스케줄링하는 클래스
 
-🖼️ ![팩토리 패턴 UML Diagram](factory-pattern.drawio.png)
 ```
+![팩토리 패턴 UML Diagram](factory-pattern.drawio.png)
 
 이렇게 하면 위에서 **TransportScheduler** 코드가 어긴 개방/폐쇄 원칙도 준수하게 되는 이점도 있다.
 운수회사 모듈을 새로 추가할 일이 생겨도 **TransportScheduler** 자체 코드는 전혀 건드리지 않은 채

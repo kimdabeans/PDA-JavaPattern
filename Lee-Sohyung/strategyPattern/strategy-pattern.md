@@ -30,8 +30,8 @@
    ├── TransportDetails.java : 픽업에 필요한 정보를 나타내는 클래스
    └── TransportScheduler.java
 
-🖼️ ![전략 패턴 UML Diagram](strategy-pattern.drawio.png)
 ```
+![전략 패턴 UML Diagram](strategy-pattern.drawio.png)
 
 1) TransportCompany 인터페이스를 이용해서 다형성을 적용할 수 있는 구조를 만든다.
    - (before) 입력을 각 운수회사의 예약 서비스 구조에 맞추는 작업과 예약 서비스에 요청을 전송하는 작업을 수행하는 schedulePickup 메소드를 정의했다.

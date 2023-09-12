@@ -21,8 +21,8 @@
    │    └── DependentCompositeCommand.java : 복수의 명령을 모은 명령을 표현하는 클래스에 성공 여부에 따라 의존적으로 여러 명령을 실행하는 기능을 추가한 클래스
    └── Main
 
-🖼️ ![Command 및 Composite 패턴 UML Diagram](command-1.drawio.png)
 ```
+![Command 및 Composite 패턴 UML Diagram](command-1.drawio.png)
 
 
 - BankAccount 클래스에 은행 계좌의 현재 잔액(**`balance`**)을 저장한다.

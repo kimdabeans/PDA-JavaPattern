@@ -20,8 +20,8 @@
    │   └── DependentCompositeCommand.java : 복수의 명령을 모은 명령을 표현하는 클래스에 성공 여부에 따라 의존적으로 여러 명령을 실행하는 기능을 추가한 클래스
    └── Main
 
-🖼️ ![Command 패턴 리팩토링 UML Diagram](command-2.drawio.png)
 ```
+![Command 패턴 리팩토링 UML Diagram](command-2.drawio.png)
 
 - BankAccountAction 인터페이스가 BankAccountCommand 클래스의 call, undo 에 각각 대응하는 메소드를 가지고 있다. 
 - DepositAction, WithdrawAction 클래스가 진정한 구현이다.

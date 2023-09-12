@@ -62,7 +62,7 @@ Concrete Implementor로 DepositAction과 WithdrawAction 클래스를 구현하�
 4. `Main.java`에서 간단한 은행 계좌 시나리오를 실행합니다.
 
 ## API 문서
-[Javadoc](docs/index.html)
+위치: docs/index.html
 
 ## Settings
 #### JDK
