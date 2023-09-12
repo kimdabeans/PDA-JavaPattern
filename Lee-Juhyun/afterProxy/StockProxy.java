@@ -1,7 +1,8 @@
 package afterProxy;
 
 /**
- * 주식 거래를 대리하는 Proxy 클래스입니다.
+ * ITrading 인터페이스를 구현하여 주식 거래를 대리하는 프록시 클래스입니다.
+ * 실제 주식 거래를 StockMarket 클래스에 위임하며, 거래 종류를 설정합니다.
  */
 public class StockProxy implements ITrading {
 	private StockMarket proxyStock;

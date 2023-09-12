@@ -1,7 +1,7 @@
 package afterProxy;
 
 /**
- * 주식 거래를 시뮬레이션하는 메인 클래스입니다.
+ * 프록시 패턴을 사용하여 주식 거래를 시뮬레이션하는 메인 클래스입니다.
  */
 public class Main {
 	public static void main(String[] args) {

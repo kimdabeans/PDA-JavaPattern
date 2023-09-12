@@ -1,7 +1,8 @@
 package afterProxy;
 
 /**
- * 주식 거래를 처리하는 클래스입니다.
+ * 실제 주식 거래를 수행하는 클래스입니다. ITrading 인터페이스를 구현하며,
+ * 특정 종류의 주식 거래를 시뮬레이션합니다.
  */
 public class StockMarket implements ITrading {
 	private String stock;
