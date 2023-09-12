@@ -3,6 +3,9 @@
 
 ### Eclipse ###
 .metadata
+.project
+.classpath
+.gitignore
 bin/
 tmp/
 *.tmp
