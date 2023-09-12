@@ -15,8 +15,15 @@ import java.util.Map;
  * @author harin
  */
 public class StockServiceProxy implements StockService {
-    private int price; // 가격
-    private RealStockService real; // 실제 주식 서비스
+    /**
+     * 주식 가격
+     */
+    private int price;
+
+    /**
+     * 실제 주식 서비스
+     */
+    private RealStockService real;
 
     /**
      * StockServiceProxy의 기본 생성자입니다. 가격을 0으로 초기화하고 실제 서비스 객체를 초기화합니다.
@@ -54,7 +61,6 @@ public class StockServiceProxy implements StockService {
     @Override
     public synchronized void setStockPrice(int price) {
         if (real != null) {
-            // 본인 에게도 설정한다
             real.setStockPrice(price);
         }
         this.price = price;
@@ -69,7 +75,6 @@ public class StockServiceProxy implements StockService {
     public void print(String string) {
         realService();
         real.print(string);
-
     }
 
     /**
@@ -79,6 +84,5 @@ public class StockServiceProxy implements StockService {
         if (real == null) {
             real = new RealStockService(price);
         }
-
     }
 }

@@ -13,14 +13,24 @@ import java.util.Map;
  *
  * @version 1.0.1
  * @author harin
- */public class RealStockService implements StockService{
-    private int price; // 프린터 이름
+ */
 
-    public RealStockService() {heavyJob("Creating Printer Instance");
+public class RealStockService implements StockService{
+    /**
+     * 프린터 이름
+     */
+    private int price;
+
+    /**
+     * RealStockService의 생성자입니다.
+     */
+    public RealStockService() {
+        heavyJob("Creating RealStockService");
     }
 
     /**
-     * 실제 주식 서비스 객체를 생성합니다. 작업 시뮬레이션을 위한 지연을 포함합니다.
+     * 실제 주식 서비스 객체를 생성합니다.
+     * 주식 데이터를 외부 공급자로부터 가져오는데 시간이 오래 걸리는 것을 heavyJob이라고 정의합니다.
      *
      * @param price 초기 주식 가격
      */
@@ -59,7 +69,6 @@ import java.util.Map;
     public void print(String string) {
         System.out.println("=== $" + price + " ===");
         System.out.println(string);
-
     }
 
     /**
