@@ -3,10 +3,10 @@
 Pro Digital Academy Design Pattern 설계 과제 <br><br>
 
 ## 📃 Contents
-### [0. Design Pattern이란?](#0.-design-pattern)
-### [1. Bridge Pattern](#1.-bridge-pattern)
-### [2. Adapter Pattern](#2.-adapter-pattern)
-### [3. Strategy Pattern](#3.-strategy-pattern)
+### [0. Design Pattern이란?](#0-design-pattern)
+### [1. Bridge Pattern](#1-bridge-pattern)
+### [2. Adapter Pattern](#2-adapter-pattern)
+### [3. Strategy Pattern](#3-strategy-pattern)
 
 <br><br>
 
