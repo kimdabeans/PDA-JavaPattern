@@ -12,7 +12,7 @@ Spring 프레임워크 내에서 자주 사용되는 `Singleton Pattern`, `Facto
 
 ## 추가 자료
 
-- [pdf 파일](#) (./resources/notion.pdf)
+- [pdf 파일](https://github.com/bin-pro/PDA-JavaPattern/blob/main/Lee-Soobin/resources/notion.pdf)
 
 ### Spring, Design Pattern PowerPoint
 
