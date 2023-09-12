@@ -4,7 +4,7 @@
 
 <img src="https://github.com/eunsiver/shinhan-Design-Oattern/assets/76419984/2b0458d8-f331-4dac-92ea-f145b6dae365" width=200>
 
-생성자 Singleton의 앞부분에 ~가 붙은 이유는 Singleton이 private임을 명시하기 위해서입니다.
+생성자 Singleton의 앞부분에 -가 붙은 이유는 Singleton이 private임을 명시하기 위해서입니다.
 또, getInstance에 밑줄이 있는 이유는 이 메소드가 static 메소드(클래스 메소드)이기 때문입니다.
 
 
