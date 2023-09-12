@@ -50,6 +50,7 @@ public class Client {
 
 
 <br/>
+<br/>
 
 ## 2️⃣ Observer Pattern
 * __주가가 변경될 때마다 Client들에게 알림 메시지가 가는 앱__
@@ -96,6 +97,7 @@ public class StockSystem {
 ```
 패턴을 적용한 후에는 `Notify`와 `Stock` 인터페이스를 분리하여 확장성을 높인다. 고객에게 메시지를 전송하는 프로세스를 직접 구현하지 않고 인터페이스를 통해 간접적으로 구현하여 새로운 알림 방식을 추가할 경우에는 `Notify` 인터페이스의 새로운 구현을 추가하기만 하면 된다. 따라서 기존 로직의 변경이 필요할 때 더 쉽게 적용할 수 있다.
   
+<br/>
 <br/>
 
 ## 3️⃣ Composite Pattern
