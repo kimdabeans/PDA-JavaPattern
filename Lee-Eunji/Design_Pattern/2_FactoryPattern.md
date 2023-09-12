@@ -1,4 +1,4 @@
-# 2. Factory Method Pattern
+# 2.Factory Method Pattern
 
 > 들어가며
 
