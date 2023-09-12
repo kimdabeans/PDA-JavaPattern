@@ -3,7 +3,7 @@ package factoryMethod;
 /**
  * JohnsBurgerGangnam 클래스는 Gangnam 지점에서 제공되는 햄버거 생성을 관리하는 팩토리 서브클래스입니다.
  */
-class JohnsBurgerGangnam extends JohnsBurger {
+public class JohnsBurgerGangnam extends JohnsBurger {
     /**
      * 주어진 버거 유형에 따라 Gangnam 지점에서 햄버거를 생성하는 메서드입니다.
      *

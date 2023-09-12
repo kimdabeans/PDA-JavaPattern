@@ -5,6 +5,10 @@ package factoryMethod;
  * Hamburger 클래스를 상속하며, 비프 버거를 서빙하는 메서드를 구현합니다.
  */
 public class GangnamStyleBeefBurger extends Hamburger {
+    /**
+     * 비프 버거를 서빙하는 메서드입니다.
+     * 강남점의 비프 버거에 대한 정보를 출력합니다.
+     */
     public GangnamStyleBeefBurger() {
     }
 

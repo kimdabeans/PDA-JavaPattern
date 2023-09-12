@@ -20,20 +20,29 @@ public abstract class Hamburger {
     }
 
     /**
-     * 고기 패티를 만들기 위한 추상 메소드와 햄버거를 포장하기 위한 추상 메소드입니다.
+     * 고기 패티를 만들기 위한 추상 메소드입니다.
      * 구체적인 구현 클래스에서 해당 메소드를 구현해야 합니다.
      */
     public abstract void cookPatty();
 
+    /**
+     * 햄버거를 포장하기 위한 추상 메소드입니다.
+     * 구체적인 구현 클래스에서 해당 메소드를 구현해야 합니다.
+     */
     public abstract void packaging();
 
     /**
-     * 빵을 자르는 메소드와 토핑을 추가하는 메소드 입니다.
+     * 빵을 자르는 메소드입니다.
      * 템플릿 메소드 내에서 공통적으로 사용됩니다.
      */
     public final void cutBread() {
         System.out.println("빵 자르기");
     }
+
+    /**
+     * 토핑을 추가하는 메소드입니다.
+     * 템플릿 메소드 내에서 공통적으로 사용됩니다.
+     */
 
     public final void addToppings() {
         System.out.println("토핑 추가하기");

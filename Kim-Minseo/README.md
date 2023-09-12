@@ -39,48 +39,6 @@ AbstractClass는 템플릿 메소드를 구현하고, 해당 템플릿 메소드
 package templateMethod.before;
 
 /**
- * ChickenBurger 클래스는 구체적인 치킨 버거 제작 과정을 정의하고 있습니다.
- */
-public class ChickenBurger {
-
-    /**
-     * 치킨 버거를 만드는 일련의 단계를 순차적으로 수행합니다.
-     *
-     * 1. 치킨 패티를 튀긴다.
-     * 2. 빵을 자른다.
-     * 3. 토핑을 추가한다.
-     * 4. ChickenBurger 포장지로 포장한다.
-     */
-    void cook() {
-        fryChicken();
-        cutBread();
-        addToppings();
-        chickenPackaging();
-    }
-
-    public void fryChicken() {
-        System.out.println("치킨 패티 튀기기");
-    }
-
-    public void cutBread() {
-        System.out.println("빵 자르기");
-    }
-
-    public void addToppings() {
-        System.out.println("토핑 추가하기");
-    }
-
-    public void chickenPackaging() {
-        System.out.println("ChickenBurger 포장지로 포장하기");
-    }
-}
-
-```
-
-```java
-package templateMethod.before;
-
-/**
  * BeefBurger 클래스는 구체적인 햄버거 제작 과정을 정의하고 있습니다.
  */
 public class BeefBurger {
@@ -100,23 +58,87 @@ public class BeefBurger {
         beefPackaging();
     }
 
+    /**
+     * 비프 패티를 굽는 메서드입니다.
+     */
     public void grillBeef() {
         System.out.println("비프 패티 굽기");
     }
 
+    /**
+     * 빵을 자르는 메서드입니다.
+     */
     public void cutBread() {
         System.out.println("빵 자르기");
     }
 
+    /**
+     * 토핑을 추가하는 메서드입니다.
+     */
     public void addToppings() {
         System.out.println("토핑 추가하기");
     }
 
+    /**
+     * BeefBurger를 포장지로 포장하는 메서드입니다.
+     */
     public void beefPackaging() {
         System.out.println("BeefBurger 포장지로 포장하기");
     }
 }
+```
 
+```java
+package templateMethod.before;
+
+/**
+ * ChickenBurger 클래스는 구체적인 치킨 버거 제작 과정을 정의하고 있습니다.
+ */
+public class ChickenBurger {
+
+    /**
+     * 치킨 버거를 만드는 일련의 단계를 순차적으로 수행합니다.
+     *
+     * 1. 치킨 패티를 튀긴다.
+     * 2. 빵을 자른다.
+     * 3. 토핑을 추가한다.
+     * 4. ChickenBurger 포장지로 포장한다.
+     */
+    void cook() {
+        fryChicken();
+        cutBread();
+        addToppings();
+        chickenPackaging();
+    }
+
+    /**
+     * 치킨 패티를 튀기는 메서드입니다.
+     */
+    public void fryChicken() {
+        System.out.println("치킨 패티 튀기기");
+    }
+
+    /**
+     * 빵을 자르는 메서드입니다.
+     */
+    public void cutBread() {
+        System.out.println("빵 자르기");
+    }
+
+    /**
+     * 토핑을 추가하는 메서드입니다.
+     */
+    public void addToppings() {
+        System.out.println("토핑 추가하기");
+    }
+
+    /**
+     * BeefBurger를 포장지로 포장하는 메서드입니다.
+     */
+    public void chickenPackaging() {
+        System.out.println("ChickenBurger 포장지로 포장하기");
+    }
+}
 ```
 
 ### After
@@ -230,6 +252,11 @@ package templateMethod.after;
  * Main 클래스는 템플릿 메소드 패턴을 활용한 햄버거 제작 예시를 보여줍니다.
  */
 public class Main {
+    /**
+     * Main 메서드는 프로그램의 진입점입니다.
+     *
+     * @param args 명령행 인수 (사용하지 않음)
+     */
     public static void main(String[] args) {
 
         Hamburger chickenBurger = new ChickenBurger();
@@ -267,20 +294,29 @@ public abstract class Hamburger {
     }
 
     /**
-     * 고기 패티를 만들기 위한 추상 메소드와 햄버거를 포장하기 위한 추상 메소드입니다.
+     * 고기 패티를 만들기 위한 추상 메소드입니다.
      * 구체적인 구현 클래스에서 해당 메소드를 구현해야 합니다.
      */
     public abstract void cookPatty();
 
+    /**
+     * 햄버거를 포장하기 위한 추상 메소드입니다.
+     * 구체적인 구현 클래스에서 해당 메소드를 구현해야 합니다.
+     */
     public abstract void packaging();
 
     /**
-     * 빵을 자르는 메소드와 토핑을 추가하는 메소드 입니다.
+     * 빵을 자르는 메소드입니다.
      * 템플릿 메소드 내에서 공통적으로 사용됩니다.
      */
     public final void cutBread() {
         System.out.println("빵 자르기");
     }
+
+    /**
+     * 토핑을 추가하는 메소드입니다.
+     * 템플릿 메소드 내에서 공통적으로 사용됩니다.
+     */
 
     public final void addToppings() {
         System.out.println("토핑 추가하기");
@@ -349,7 +385,7 @@ package factoryMethod;
 /**
  * Hamburger 추상 클래스는 햄버거 객체를 나타내며, 서빙 메소드를 제공합니다.
  */
-abstract class Hamburger {
+public abstract class Hamburger {
     /**
      * 햄버거를 서빙하는 추상 메소드입니다.
      * 구체적인 구현 클래스에서 이 메소드를 구현해야 합니다.
@@ -364,7 +400,7 @@ package factoryMethod;
 /**
  * JohnsBurger 추상 클래스는 버거 주문과 생성을 관리하는 팩토리 메소드를 포함합니다.
  */
-abstract class JohnsBurger {
+public abstract class JohnsBurger {
     /**
      * 주어진 버거 유형에 따라 버거를 주문하고 생성하는 메소드입니다.
      *
@@ -394,7 +430,7 @@ package factoryMethod;
 /**
  * JohnsBurgerGangnam 클래스는 Gangnam 지점에서 제공되는 햄버거 생성을 관리하는 팩토리 서브클래스입니다.
  */
-class JohnsBurgerGangnam extends JohnsBurger {
+public class JohnsBurgerGangnam extends JohnsBurger {
     /**
      * 주어진 버거 유형에 따라 Gangnam 지점에서 햄버거를 생성하는 메서드입니다.
      *
@@ -420,7 +456,7 @@ package factoryMethod;
 /**
  * JohnsBurgerYongsan 클래스는 Yongsan 지점에서 제공되는 햄버거 생성을 관리하는 팩토리 서브클래스입니다.
  */
-class JohnsBurgerYongsan extends JohnsBurger {
+public class JohnsBurgerYongsan extends JohnsBurger {
     /**
      * 주어진 버거 유형에 따라 Yongsan 지점에서 햄버거를 생성하는 메소드입니다.
      *
@@ -466,6 +502,11 @@ package factoryMethod;
  * Main 클래스는 팩토리 메소드 패턴을 활용하여 햄버거 주문 및 생성을 시연하는 클래스입니다.
  */
 public class Main {
+    /**
+     * Main 메서드는 프로그램의 진입점입니다.
+     *
+     * @param args 명령행 인수 (사용하지 않음)
+     */
     public static void main(String[] args) {
         JohnsBurger yongsanStore = new JohnsBurgerYongsan();
         JohnsBurger gangnamStore = new JohnsBurgerGangnam();

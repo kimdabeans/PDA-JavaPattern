@@ -20,18 +20,30 @@ public class BeefBurger {
         beefPackaging();
     }
 
+    /**
+     * 비프 패티를 굽는 메서드입니다.
+     */
     public void grillBeef() {
         System.out.println("비프 패티 굽기");
     }
 
+    /**
+     * 빵을 자르는 메서드입니다.
+     */
     public void cutBread() {
         System.out.println("빵 자르기");
     }
 
+    /**
+     * 토핑을 추가하는 메서드입니다.
+     */
     public void addToppings() {
         System.out.println("토핑 추가하기");
     }
 
+    /**
+     * BeefBurger를 포장지로 포장하는 메서드입니다.
+     */
     public void beefPackaging() {
         System.out.println("BeefBurger 포장지로 포장하기");
     }

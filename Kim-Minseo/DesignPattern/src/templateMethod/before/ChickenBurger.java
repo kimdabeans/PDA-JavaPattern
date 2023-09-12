@@ -20,18 +20,30 @@ public class ChickenBurger {
         chickenPackaging();
     }
 
+    /**
+     * 치킨 패티를 튀기는 메서드입니다.
+     */
     public void fryChicken() {
         System.out.println("치킨 패티 튀기기");
     }
 
+    /**
+     * 빵을 자르는 메서드입니다.
+     */
     public void cutBread() {
         System.out.println("빵 자르기");
     }
 
+    /**
+     * 토핑을 추가하는 메서드입니다.
+     */
     public void addToppings() {
         System.out.println("토핑 추가하기");
     }
 
+    /**
+     * BeefBurger를 포장지로 포장하는 메서드입니다.
+     */
     public void chickenPackaging() {
         System.out.println("ChickenBurger 포장지로 포장하기");
     }
