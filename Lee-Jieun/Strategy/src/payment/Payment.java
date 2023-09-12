@@ -2,6 +2,8 @@ package payment;
 
 /**
  * 결제 처리를 위한 메서드를 정의하는 결제 인터페이스
+ * @version 1.0
+ * @author Lee Jieun
  */
 public interface Payment {
 	/**
