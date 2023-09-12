@@ -6,7 +6,7 @@
 패턴을 구현하기 위해 많은 서브 클래스를 만들어 구현해야 하므로 코드의 복잡성이 증가한다는 단점이 있다.
 
 ## Factory Method Pattern 선정 이유
-스프링의 Dependency Injection 컨테이너에서 위의 패턴을 사용하기 때문에 스프링 컨테이너는 다양한 형식의 설정 정보를 받아드릴 수 있다.
+스프링의 Dependency Injection 컨테이너에서 위의 패턴을 사용하기 때문에 스프링 컨테이너는 다양한 형식의 설정 정보를 받아들일 수 있다.
 앞으로 하게 될 프로젝트에서 Spring을 사용하는 만큼 위 패턴의 작동 방식을 이해하고 활용하는 것이 중요하다고 생각하여 위의 패턴을 선정하게 되었다.
 
 ## Description
@@ -58,7 +58,7 @@ MARIOKART 클래스는 각각 캐릭터의 행동을 수행하고 setBananaItem,
 
 `Mario.java, Luigi.java, DonkeyKong.java` MARIOKART를 상속받아 특정 캐릭터 구현
 
-`Main.java` Strategy 패턴을 홀용하여 캐릭터의 행동을 동적으로 변경
+`Main.java` Strategy 패턴을 활용하여 캐릭터의 행동을 동적으로 변경
 
 ## Usage
 `Main.java`
