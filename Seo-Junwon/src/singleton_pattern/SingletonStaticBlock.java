@@ -1,8 +1,9 @@
 package singleton_pattern;
 
 /**
- * StaticBlock을 통해 예외를 처리하는 방식으로 Singleton Pattern을 구현한 클래스
- * 
+ * <p>
+ * StaticBlock을 통해 예외를 처리하는 방식으로 Singleton Pattern을 구현한 클래스이다.
+ * </p>
  * @author 서준원
  */
 public class SingletonStaticBlock {
@@ -15,7 +16,7 @@ public class SingletonStaticBlock {
     private SingletonStaticBlock() {}
 
     /**
-     * 정적 블록을 사용하여 싱글톤 인스턴스를 초기화한다. 
+     * 정적 블록을 사용하여 싱글톤 인스턴스를 초기화한다. <br>
      * 인스턴스 생성 중에 예외가 발생하면 예외가 catch되고 런타임 예외가 throw된다.
      * 
      * @throws : 인스턴스 생성 중 발생한 런타임 에러

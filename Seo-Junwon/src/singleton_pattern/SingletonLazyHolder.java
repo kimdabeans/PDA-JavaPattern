@@ -1,9 +1,10 @@
 package singleton_pattern;
 
 /**
- * Lazy Holding 기법을 사용해 Singleton Pattern을 구현한 클래스
+ * <p>
+ * Lazy Holding 기법을 사용해 Singleton Pattern을 구현한 클래스이다.<br>
  * Holder 기법을 사용하면 클래스가 계속 메모리에 로드되지 않고, getInstance 메서드가 호출될 때만 로드된다.
- * 
+ * </p>
  * @author 서준원
  */
 public class SingletonLazyHolder {

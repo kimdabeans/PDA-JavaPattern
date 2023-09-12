@@ -1,16 +1,17 @@
 package factory_pattern;
 /**
- * 심플 팩토리 패턴을 구현한 SimplePhoneFactory 클래스
- * 클라이언트로부터 주문이 들어오면 휴대폰을 생성하는 orderPhone 메서드와,
+ * <p>
+ * 심플 팩토리 패턴을 구현한 SimplePhoneFactory 클래스이다.<br>
+ * 클라이언트로부터 주문이 들어오면 휴대폰을 생성하는 orderPhone 메서드와,<br>
  * 전달된 parameter에 해당하는 휴대폰을 생성하는 createPhone 메서드로 구성되어 있다. 
- * 
+ * </p>
  * @author 서준원
  *
  */
 public class SimplePhoneFactory {
 	
 	/**
-	 * 클라이언트로부터 주문이 들어오면 휴대폰을 생성하는 orderPhone 메서드와,
+	 * 클라이언트로부터 주문이 들어오면 휴대폰을 생성하는 orderPhone 메서드와,<br>
 	 * 해당하는 휴대폰을 생성하는 createPhone 메서드로 구성되어 있다. 
 	 * 
 	 * @param : String type -> 고객이 주문한 휴대폰 타입

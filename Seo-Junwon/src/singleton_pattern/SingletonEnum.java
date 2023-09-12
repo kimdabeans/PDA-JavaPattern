@@ -1,9 +1,10 @@
 package singleton_pattern;
 
 /**
- * 열거형(enum)을 사용하여 Singleton Pattern을 구현한 클래스
+ * <p>
+ * 열거형(enum)을 사용하여 Singleton Pattern을 구현한 클래스이다.<br>
  * Java를 활용한 Singleton Pattern에서 가장 간단하고 안전한 방법 중 하나이다.
- * 
+ * </p>
  * @author 서준원
  */
 enum SingletonEnum {

@@ -1,10 +1,11 @@
 package singleton_pattern;
 
 /**
- * Eager Initialization을 활용해서 Singleton Pattern 구현한 클래스
- * static final 선언을 해두었기에 멀티 쓰레드 환경에서도 안전하다.  
+ * <p>
+ * Eager Initialization을 활용해서 Singleton Pattern 구현한 클래스이다.<br>
+ * static final 선언을 해두었기에 멀티 쓰레드 환경에서도 안전하다.  <br>
  * 생성자를 private로 선언하여 외부에서 new를 통해 사용할 수 없다.
- * 
+ * </p>
  * @author 서준원
  *
  */

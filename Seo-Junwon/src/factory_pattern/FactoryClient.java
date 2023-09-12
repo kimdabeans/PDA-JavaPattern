@@ -1,9 +1,10 @@
 package factory_pattern;
 
 /**
- * 유저가 주문을 위해 시나리오가 포함된 메인 클래스
+ * <p>
+ * 유저가 주문을 위해 시나리오가 포함된 메인 클래스이다.<br>
  * Factory 메서드 패턴을 활용해 IPhone, AndroidPhone을 생성하고 기능을 실행한다.  
- * 
+ * </p>
  * @author 서준원
  *
  */

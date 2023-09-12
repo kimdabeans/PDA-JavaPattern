@@ -1,9 +1,10 @@
 package abstract_factory_pattern;
 
 /**
- * 휴대폰의 기능이 정의된 Phone 인터페이스를 구현한 AndroidPhone 클래스
- * Phone 인터페이스의 call, playGame 메서드를 override 해 아이폰 자체 기능 재정의.
- * 
+ * <p>
+ * 휴대폰의 기능이 정의된 Phone 인터페이스를 구현한 AndroidPhone 클래스이다. <br>
+ * Phone 인터페이스의 call, playGame 메서드를 override 해 아이폰 자체 기능 재정의 한다.
+ * </p>
  * @author 서준원
  *
  */

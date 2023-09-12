@@ -1,8 +1,9 @@
 package factory_pattern;
 
 /**
- * 휴대폰의 기능을 정의한 Phone 인터페이스
- * 
+ * <p>
+ * 휴대폰의 기능을 정의한 Phone 인터페이스이다.
+ * </p>
  * @author 서준원
  *
  */

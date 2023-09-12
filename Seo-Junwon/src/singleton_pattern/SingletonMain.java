@@ -1,5 +1,12 @@
 package singleton_pattern;
-
+/**
+ * <p>
+ * 구현한 5가지의 싱글톤 패턴을 테스트할 수 있는 메인 클래스이다.<br>
+ * 싱글톤 패턴을 통해 여러 인스턴스가 같은 주소를 가지고 있음을 확인할 수 있다. 
+ * </p>
+ * @author 서준원
+ *
+ */
 public class SingletonMain {
 	
 	public static void main(String[] args) {

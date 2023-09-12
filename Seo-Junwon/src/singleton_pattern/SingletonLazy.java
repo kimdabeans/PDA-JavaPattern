@@ -1,10 +1,11 @@
 package singleton_pattern;
 
 /**
- * Lazy Initialization을 객체 생성에 대한 관리를 내부적으로 처리하는 방식으로 Singleton Pattern을 구현한 클래스
- * 메서드를 호출했을 때 인스턴스 변수의 null 유무에 따라 초기화 하거나 있는 걸 반환하는 기법
- * static 키워드로 인해 사용하지 않아도 고정적으로 메모리를 차지하는 문제 해결 가능.
- * 
+ * <p>
+ * Lazy Initialization을 객체 생성에 대한 관리를 내부적으로 처리하는 방식으로 Singleton Pattern을 구현한 클래스이다.<br>
+ * 메서드를 호출했을 때 인스턴스 변수의 null 유무에 따라 초기화 하거나 있는 걸 반환하는 기법이다.<br>
+ * static 키워드로 인해 사용하지 않아도 고정적으로 메모리를 차지하는 문제 해결 가능하다.
+ * </p>
  * @author 서준원
  */
 public class SingletonLazy {

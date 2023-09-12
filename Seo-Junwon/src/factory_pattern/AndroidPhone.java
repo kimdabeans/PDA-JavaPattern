@@ -1,8 +1,9 @@
 package factory_pattern;
 /**
- * 휴대폰의 기능을 정의한 Phone 인터페이스를 구현한 AndroidPhone 구현체 클래스
- * 휴대폰을 완성하는 complete 메서드와 휴대폰을 통해 전화를 하는 call 메서드로 구성.
- * 
+ * <p>
+ * 휴대폰의 기능을 정의한 Phone 인터페이스를 구현한 AndroidPhone 구현체 클래스이다.<br>
+ * 휴대폰을 완성하는 complete 메서드와 휴대폰을 통해 전화를 하는 call 메서드로 구성된다.
+ * </p>
  * @author 서준원
  *
  */

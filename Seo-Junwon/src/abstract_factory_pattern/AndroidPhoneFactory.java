@@ -1,10 +1,10 @@
 package abstract_factory_pattern;
 
 /**
- * 휴대폰을 생성하는 기능이 정의된 PhoneFactory를 구현한 IPhoneFactory 클래스
- * 휴대폰을 생성하는 createPhone 메서드와,
- * OS를 생성하는 CreateOS 메서드로 구성. 
- * 
+ * <p>
+ * 휴대폰을 생성하는 기능이 정의된 PhoneFactory를 구현한 IPhoneFactory 클래스이다. <br>
+ * 휴대폰을 생성하는 createPhone 메서드와, OS를 생성하는 CreateOS 메서드로 구성되어 있다. 
+ * </p>
  * @author 서준원
  *
  */
