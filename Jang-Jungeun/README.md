@@ -15,6 +15,7 @@
   
 ### 1-2. Adapter Pattern UML 설명
 <img src="https://github.com/jang294/PDA-JavaPattern/assets/98522102/f85d9d10-6fcd-4eb8-a282-9b51abb50ade" width = "700">  
+
 | 이름 | 설명 |
 | :-----------------------: | ---- |
 | Adapter 클래스 | Client 클래스를 확장하여 CurrencyConverter 인터페이스를 구현한 클래스 |
