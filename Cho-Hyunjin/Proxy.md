@@ -59,7 +59,7 @@ public class RestaurantWithoutProxy {
     }
 }
 ```
-Main.java
+MainWithoutProxy.java
 ```java
 /**
  * 이 클래스는 주문을 처리하는 데 사용되는 식당 객체를 나타냅니다.
@@ -86,7 +86,7 @@ public class MainWithoutProxy {
 해당 프로그램의 javadoc은 **ProxyBefore/docs** 에 있습니다.<br>
 | 클래스명 | 링크                                        |
 | --------- | ---------------------------------------- |
-| Main Class | [Main Class](./ProxyBefore/docs/Main.html) |
+| MainWithoutProxy Class | [MainWithoutProxy Class](./ProxyBefore/docs/MainWithoutProxy.html) |
 | RestaurantWithoutProxy Class | [RestaurantWithoutProxy Class](./ProxyBefore/docs/RestaurantWithoutProxy.html) |
 
 이 프로그램은 아래와 같이 여러가지 비효율적인 부분들이 있습니다.
