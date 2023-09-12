@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"observer","l":"App"},{"p":"observer","l":"Client"},{"p":"observer","l":"ClientDAO"},{"p":"observer","l":"Notify"},{"p":"observer","l":"NotifyClient"},{"p":"observer","l":"Stock"},{"p":"observer","l":"StockSystem"}];updateSearchResults();
