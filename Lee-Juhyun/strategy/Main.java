@@ -8,13 +8,13 @@ public class Main {
         student.changeNumber(9,12);
 
         // Calculator 설정
-        student.setCalculator(new PlusCalculator());
+        student.setCalculator(new PlusICalculator());
         double result1 = student.operate();
         System.out.println(result1);
 
 
         // 새로운 Calculator 설정
-        student.setCalculator(new MinusCalculator());
+        student.setCalculator(new MinusICalculator());
         double result2 = student.operate();
         System.out.println(result2);
     }

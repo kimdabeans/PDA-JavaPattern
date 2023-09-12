@@ -1,8 +1,9 @@
 package strategy;
 
-public class PlusCalculator implements Calculator{
+public class MinusICalculator implements ICalculator {
+
     @Override
     public double execute(double n1, double n2) {
-        return n1+n2;
+        return n1-n2;
     }
 }

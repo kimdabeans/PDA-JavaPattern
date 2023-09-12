@@ -1,19 +1,19 @@
 package strategy;
 
 public class Student {
-    private Calculator calculator;
+    private ICalculator ICalculator;
     private double n1;
     private double n2;
 
     public double operate(){
-        return calculator.execute(n1,n2);
+        return ICalculator.execute(n1,n2);
     }
 
-    public void setCalculator(Calculator calculator){
-        this.calculator=calculator;
+    public void setCalculator(ICalculator ICalculator){
+        this.ICalculator = ICalculator;
     }
 
-    void changeNumber(double n1, double n2) {
+    public void changeNumber(double n1, double n2) {
         this.n1 = n1;
         this.n2 = n2;
     }
