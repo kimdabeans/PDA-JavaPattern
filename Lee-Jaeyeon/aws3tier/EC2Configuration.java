@@ -5,6 +5,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents the configuration for an EC2 instance.
+ * <p>
+ * This class provides a builder pattern implementation for constructing EC2 configurations.
+ * </p>
+ */
 public class EC2Configuration {
     private final InstanceType instanceType;
     private final AMI ami;
@@ -14,6 +20,16 @@ public class EC2Configuration {
     private final String subnetId;
     private final String privateIp;
     private final String publicIp;
+
+    /**
+     * Constructs a new {@code EC2Configuration} using the provided {@code ConfigBuilder}.
+     * <p>
+     * This constructor is intended to be used internally for the builder pattern implementation.
+     * </p>
+     *
+     * @param configBuilder a non-null {@code ConfigBuilder} containing the desired configuration values
+     * @throws IllegalArgumentException if the provided {@code ConfigBuilder} is null
+     */
 
     private EC2Configuration(@NotNull ConfigBuilder configBuilder) {
         this.instanceType = configBuilder.instanceType;
@@ -26,6 +42,13 @@ public class EC2Configuration {
         this.publicIp = configBuilder.publicIp;
     }
 
+    /**
+     * A builder for {@code EC2Configuration}, following the Builder design pattern.
+     * This builder allows for the incremental construction of an {@code EC2Configuration} object.
+     * Each method in this builder, apart from {@code build}, returns the builder itself,
+     * allowing for method chaining.
+     *
+     */
     public static class ConfigBuilder {
         private InstanceType instanceType;
         private AMI ami;
