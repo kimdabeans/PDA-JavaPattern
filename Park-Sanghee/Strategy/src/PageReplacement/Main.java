@@ -18,7 +18,7 @@ public class Main {
             System.out.println("2. LRU 알고리즘");
             System.out.println("3. LFU 알고리즘");
             System.out.println("4. 종료");
-            System.out.print("선택 (1/2/3): ");
+            System.out.print("선택 : ");
 			
 			int strategyNum = Integer.parseInt(bf.readLine());
 			if (strategyNum == 1) {
