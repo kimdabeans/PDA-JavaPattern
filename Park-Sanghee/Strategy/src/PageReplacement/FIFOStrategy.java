@@ -1,5 +1,10 @@
 package PageReplacement;
 
+/**
+ * ConcreteStrategy : FIFO 페이지 교체 알고리즘을 구현하는 클래스
+ * @version 1.0
+ * @author Park SangHee
+ **/
 public class FIFOStrategy implements PageReplacementStrategy {
 	@Override
 	public void replace(int demandPage) {
