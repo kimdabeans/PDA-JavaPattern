@@ -4,6 +4,9 @@ package templatemethod;
  * 라면 추상 클래스 
  */
 public abstract class Ramen {
+	/**
+	 * 라면의 이름 
+	 */
 	private String name;
 	/**
 	 * Ramen 클래스의 생성자 

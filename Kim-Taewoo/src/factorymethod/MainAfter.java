@@ -7,7 +7,7 @@ public class MainAfter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Factory shinramenFactory = new ShinRamenFactoryAfter();
+		Factory shinramenFactory = new RamenFactoryAfter();
 		
 		Product shinramenProduct = shinramenFactory.create("신라면");
 
@@ -16,7 +16,7 @@ public class MainAfter {
 		shinramenProduct.packaging();
 		shinramenProduct.deliver("Japen");
 		
-		Factory sesameramenFactory = new SesameRamenFactoryAfter();
+		Factory sesameramenFactory = new RamenFactoryAfter();
 		
 		Product sesameramenProduct = sesameramenFactory.create("참깨라면");
 		

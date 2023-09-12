@@ -3,18 +3,18 @@ package factorymethod.concreteProduct;
 import factorymethod.framework.Product;
 
 /**
- * 패턴 적용 후 신라면 제품 클래스 
+ * 패턴 적용 후 라면 제품 클래스 
  */
-public class ShinRamenAfter extends Product {
+public class RamenAfter extends Product {
 	/**
 	 * 라면의 이름을 가지는 변수 
 	 */
 	private String name;
 	/**
-	 * 신라면의 생성자 - 라면의 이름을 설정한다. 
+	 * 라면의 생성자 - 라면의 이름을 설정한다. 
 	 * @param name 라면의 이름 
 	 */
-	public ShinRamenAfter(String name) {
+	public RamenAfter(String name) {
 		this.name = name;
 		System.out.println("---------------------");
 		System.out.println(name + "을 생산");
