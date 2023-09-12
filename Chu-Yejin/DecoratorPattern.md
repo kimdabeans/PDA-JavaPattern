@@ -39,9 +39,15 @@
 | MusicApp | 음악 앱을 나타내는 클래스 |
 | main | 동작 테스트용 클래스 |
 
-![Decorator_UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/1a81a678-ec96-42fe-ac1d-7595d7c77807/Untitled.png)
+![Decorator_UML](https://github.com/kimdabeans/PDA-JavaPattern/assets/79244054/cedb4750-f638-4ea2-a0b9-16b7f9d31f67)
 
-UML
+클라이언트는 기본 스마트폰 객체를 생성한 후, 필요한 앱 데코레이터를 추가하여 스마트폰의 설명과 가격을 동적으로 확장합니다. 이를 통해 기본 스마트폰에 필요한 앱들을 선택적으로 추가하거나 조합할 수 있습니다.
+
+Smartphone: 추상 클래스로, 기본 스마트폰의 설명과 가격을 관리합니다. 데코레이터 패턴의 컴포넌트 역할을 합니다.
+AppDecorator: 앱을 나타내는 추상 데코레이터 클래스로, 스마트폰에 추가될 앱들을 확장하는 역할을 합니다.
+BasicSmartphone: 실제 구현체로, 기본 스마트폰의 설명과 가격을 정의합니다.
+CameraApp: 앱 데코레이터 중 하나로, 스마트폰에 카메라 앱을 추가한 설명과 가격을 정의합니다.
+MusicApp: 앱 데코레이터 중 하나로, 스마트폰에 음악 앱을 추가한 설명과 가격을 정의합니다.
 
 ```java
 package decorator;
@@ -215,7 +221,7 @@ public class main {
 
 BasicSmartphone 객체가 있는 상황을 상상해봅시다. 카메라 앱을 추가하고자 하면 이를 Camera App 객체로 감싸고, 여기에 음악 앱을 추가하고자 하면 MusicApp 객체로 감쌉니다. 이렇게 기존의 객체를 수정하는 것이 아니라 감싸는 과정(wrapping)을 통해 객체에 추가 요소를 동적으로 더할 수 있고, 서브클래스를 만들 때보다 유연하게 확장할 수 있습니다.
 
-**!!![데코레이팅 과정 그림 삽입]**
+![decorating](https://github.com/kimdabeans/PDA-JavaPattern/assets/79244054/c12de503-59d2-4b1e-86ee-78f791ec2c51)
 
 상속을 통해 서브클래스를 생성할 때, 그 행동은 컴파일 시점에서 완전히 결정되며, 모든 서브클래스에서 동일한 행동을 상속받아야 합니다. 그러나 객체의 행동을 확장하기 위해 구성을 사용하면, 기존 코드를 수정하지 않고도 새로운 코드를 만들어 실행 중에 동적으로 행동을 설정 할 수 있습니다. 이러한 방식은 코드 수정에 따른 버그나 의도하지 않은 부작용을 예방하는 데 도움이 됩니다.
 
@@ -278,4 +284,3 @@ public class Client {
 }
 ```
 
----

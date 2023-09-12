@@ -161,7 +161,9 @@ public enum SingletonEnum {
 | Manager | 창고의 물건을 관리하는 클래스 |
 | main | 동작 테스트용 클래스 |
 
-![Singleton_UML](https://prod-files-secure.s3.us-west-2.amazonaws.com/8c703a41-5bdf-4521-b2c6-403127eda65c/94859c58-cf0f-4948-b170-284768c4c104/Untitled.png)
+![Singleton_UML](https://github.com/kimdabeans/PDA-JavaPattern/assets/79244054/39dd5563-1cfd-4a73-94e1-3f4e76359c79)
+
+클래스 다이어그램을 살펴보면, Manager 클래스는 싱글턴 패턴을 적용하여 항상 하나의 유일한 인스턴스를 유지하며, 이 인스턴스를 통해 창고에서 물건을 추가하고 제거할 수 있습니다.
 
 ```java
 package Singleton;
@@ -322,4 +324,3 @@ public enum Manager {
 }
 ```
 
----
