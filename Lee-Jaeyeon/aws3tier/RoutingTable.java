@@ -22,12 +22,12 @@ public class RoutingTable {
         if (route == null) {
             throw new IllegalArgumentException("Route cannot be null");
         }
-        routeList.add(route);
+        this.routeList.add(route);
     }
 
     // 라우트 삭제 메서드
     public void removeRoute(Route route) {
-        routeList.remove(route);
+        this.routeList.remove(route);
     }
 
 

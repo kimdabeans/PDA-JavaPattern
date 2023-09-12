@@ -1,6 +1,6 @@
 package aws3tier;
 
-public class NatGateway {
+public class NatGateway implements IRoutable {
 
     private String natGatewayId;
     private String vpcId;
@@ -28,5 +28,10 @@ public class NatGateway {
         this.state = "pending";  // 초기 상태 예
         this.elasticIpAddress = null;  // 초기에 EIP는 할당되지 않았을 수 있음
         this.connectivityType = "public";  // 예상되는 기본 연결 유형
+    }
+
+    @Override
+    public String getTargetId() {
+        return this.natGatewayId;
     }
 }

@@ -2,7 +2,7 @@ package aws3tier;
 
 import java.util.List;
 
-public class InternetGateway {
+public class InternetGateway implements IRoutable {
     private String internetGatewayId;
     private String vpcId;
     private String state;
@@ -18,5 +18,10 @@ public class InternetGateway {
         }
         this.vpcId = vpcId;
         this.state = "attached";
+    }
+
+    @Override
+    public String getTargetId() {
+        return this.internetGatewayId;
     }
 }
