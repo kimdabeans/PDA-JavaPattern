@@ -1,7 +1,5 @@
 package aws3tier;
 
-import java.util.List;
-
 public class InternetGateway implements IRoutable {
     private String internetGatewayId;
     private String vpcId;

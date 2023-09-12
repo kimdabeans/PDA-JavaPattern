@@ -13,5 +13,6 @@ public class AddRouteCommand implements ICommand {
     @Override
     public void execute() {
         this.routingTable.addRoute(this.route);
+        System.out.println(this.route.toString() + " added to the routing table!");
     }
 }

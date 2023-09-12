@@ -13,5 +13,6 @@ public class RemoveRouteCommand implements ICommand {
     @Override
     public void execute() {
         this.routingTable.removeRoute(this.route);
+        System.out.println(this.route.toString() + " removed!");
     }
 }
