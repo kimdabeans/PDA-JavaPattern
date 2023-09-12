@@ -313,7 +313,7 @@ public class Main {
 해당 프로그램의 javadoc은 **ProxyAfter/docs** 에 있습니다.<br>
 | 클래스명 | 링크                                        |
 | --------- | ---------------------------------------- |
-| Main Class | [FoodOrder Class](./ProxyAfter/docs/Main.html) |
+| Main Class | [Main Class](./ProxyAfter/docs/Main.html) |
 | FoodOrder Class | [FoodOrder Class](./ProxyAfter/docs/FoodOrder.html) |
 | FoodOrderProxy Class | [FoodOrderProxy Class](./ProxyAfter/docs/FoodOrderProxy.html) |
 | Restaurant Class | [Restaurant Class](./ProxyAfter/docs/Restaurant.html) |
