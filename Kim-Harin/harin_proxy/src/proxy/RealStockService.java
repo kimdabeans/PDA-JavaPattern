@@ -13,30 +13,26 @@ import java.util.Map;
  *
  * @version 1.0.1
  * @author harin
- *
- */
-public class RealStockService implements StockService{
+ */public class RealStockService implements StockService{
     private int price; // 프린터 이름
 
-    /**
-     * 생성자 이름을 지정하지 않고 <code>Printer</code> 인스턴스를 생성합니다. 작업 시뮬레이션을 위한 지연을 포함합니다.
-     */
     public RealStockService() {heavyJob("Creating Printer Instance");
     }
 
     /**
-     * 생성자 지정된 이름으로 <code>Printer</code> 인스턴스를 생성합니다.
+     * 실제 주식 서비스 객체를 생성합니다. 작업 시뮬레이션을 위한 지연을 포함합니다.
      *
-     * @param name
+     * @param price 초기 주식 가격
      */
     RealStockService(int price) {
         this.price = price;
-        heavyJob("Creating Printer instance(" + price + ")");
+        heavyJob("Creating RealStockService instance($" + price + ")");
     }
 
     /**
-     * 이름을 설정합니다.
-     * @param name
+     * 주식 가격을 설정합니다.
+     *
+     * @param price 설정할 주식 가격
      */
     @Override
     public void setStockPrice(int price) {
@@ -45,8 +41,9 @@ public class RealStockService implements StockService{
     }
 
     /**
-     * 이름을 취득합니다
-     * @return name
+     * 현재 주식 가격을 반환합니다.
+     *
+     * @return 현재 주식 가격
      */
     @Override
     public int getStockPrice() {
@@ -54,19 +51,21 @@ public class RealStockService implements StockService{
     }
 
     /**
-     * 이름을 붙여서 표시합니다.
-     * @param string
+     * 주어진 문자열을 출력합니다. 출력 시 주식 가격을 함께 표시합니다.
+     *
+     * @param string 출력할 문자열
      */
     @Override
     public void print(String string) {
-        System.out.println("=== " + price + " ===");
+        System.out.println("=== $" + price + " ===");
         System.out.println(string);
 
     }
 
     /**
-     * <p>무거운 작업이라고 가정합니다</p>
-     * @param msg
+     * 무거운 작업을 수행한다고 가정한 메소드입니다.
+     *
+     * @param msg 작업 메시지
      */
     private void heavyJob(String msg) {
         System.out.println(msg);
@@ -75,7 +74,7 @@ public class RealStockService implements StockService{
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
             }
-            System.out.println(".");
+            System.out.print(".");
         }
         System.out.println("finish");
     }

@@ -9,22 +9,14 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
- * BankAccount 클래스는 은행 계좌를 나타내며 GUI를 통해 계좌의 상태를 관리합니다.
- * 입금, 출금, 계좌 확인, 계좌 동결, 계좌 상태 변경, 그리고 프로그램 종료 기능을 제공합니다.
+ * <h3>BankAccount 클래스는 은행 계좌를 나타내며 GUI를 통해 계좌의 상태를 관리합니다.</h3>
+ *
  * <p>
- * 이 클래스는 AWT (Abstract Window Toolkit)를 사용하여 GUI를 구현하며, Context 인터페이스를 구현하여
+ * 입금, 출금, 계좌 확인, 계좌 동결, 계좌 상태 변경, 그리고 프로그램 종료 기능을 제공합니다.
+ * 이 클래스는 AWT (Abstract Window Toolkit)를 사용하여 GUI를 구현하며, Context 인터페이스를 구현하고,
  * 계좌 상태 및 관련 메소드를 제공합니다.
  * </p>
- * <p>
- * Usage:
- * <pre>
- *     // BankAccount 객체 생성 및 GUI 표시
- *     new BankAccount();
- * </pre>
- * </p>
- * <p>
- * 참고: 이 클래스는 은행 계좌를 시뮬레이션하며, 실제 은행 시스템과는 무관합니다.
- * </p>
+ *
  * @see Context
  * @see AccountStatus
  * @see OpenState
@@ -80,6 +72,12 @@ public class BankAccount extends Frame implements ActionListener, Context {
         new BankAccount();
     }
 
+    /**
+     * actionPerformed 메서드는 ActionListener 인터페이스를 구현한 메서드입니다.
+     * 이벤트 처리를 담당하며, 각 버튼 클릭에 따라 해당 기능을 수행합니다.
+     *
+     * @param e ActionEvent 객체
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == buttonDeposit) {
@@ -100,23 +98,41 @@ public class BankAccount extends Frame implements ActionListener, Context {
         }
     }
 
+    /**
+     * 계좌 잔액을 설정합니다.
+     *
+     * @param balance 설정할 계좌 잔액
+     */
     @Override
     public void setBalance(int balance) {
         this.balance = balance;
         textBalance.setText("Balance: " + balance);
     }
 
+    /**
+     * 현재 계좌 잔액을 반환합니다.
+     *
+     * @return 현재 계좌 잔액
+     */
     @Override
     public int getBalance() {
         return balance;
     }
 
+    /**
+     * 현재 계좌 잔액을 화면에 표시합니다.
+     */
     @Override
     public void checkBalance() {
         // textScreen에 현재 잔액 표시
         textScreen.setText("Current balance: " + getBalance());
     }
 
+    /**
+     * 계좌 상태를 변경합니다.
+     *
+     * @param newState 변경할 계좌 상태
+     */
     @Override
     public void changeState(AccountStatus newState) {
         state = newState;
