@@ -16,6 +16,6 @@ public class main {
 
         // 최종 스마트폰 구매 정보 출력
         System.out.println("Smartphone: " + smartphone.getDescription());
-        System.out.println("금액: $" + smartphone.cost());
+        System.out.println("최종 금액: $" + smartphone.cost());
     }
 }

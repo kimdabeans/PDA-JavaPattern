@@ -48,38 +48,79 @@
 
 클래스 다이어그램을 살펴보면, 주식 시장이 주제(Subject)로 작용하고, 주식 투자자들이 옵저버로 등록되어 주식 가격의 변동을 관찰하는 구조를 가지고 있습니다.
 
-StockMarket 클래스: 주식 시장을 나타내며, 주식 가격의 상태를 관리합니다. 주식 투자자들을 등록하고 주식 가격이 업데이트될 때 등록된 투자자들에게 알림을 보내는 역할을 합니다.
-StockSubject 인터페이스: 주식 주제(Subject)의 인터페이스로, 주제 객체가 가져야 할 메서드를 정의합니다. 주제 객체는 옵저버를 등록하고 제거하며, 옵저버들에게 주식 가격의 업데이트를 알리는 역할을 수행합니다.
-Investor 클래스: 주식 투자자를 나타내며, 주식 가격의 변동을 감시하는 옵저버 역할을 합니다. 주식 가격이 업데이트될 때마다 해당 투자자는 업데이트 메서드를 호출하여 주식 가격 변동을 처리하고 메시지를 출력합니다.
+StockMarket 클래스는 주식 시장을 나타내며, 주식 가격의 상태를 관리합니다. 주식 투자자들을 등록하고 주식 가격이 업데이트될 때 등록된 투자자들에게 알림을 보내는 역할을 합니다.
+StockSubject 인터페이스는 주식 주제(Subject)의 인터페이스로, 주제 객체가 가져야 할 메서드를 정의합니다. 주제 객체는 옵저버를 등록하고 제거하며, 옵저버들에게 주식 가격의 업데이트를 알리는 역할을 수행합니다.
+Investor 클래스는 주식 투자자를 나타내며, 주식 가격의 변동을 감시하는 옵저버 역할을 합니다. 주식 가격이 업데이트될 때마다 해당 투자자는 업데이트 메서드를 호출하여 주식 가격 변동을 처리하고 메시지를 출력합니다.
 
 ```java
-package Observer;
+package observer;
 
+/**
+ * StockSubject 인터페이스는 주식 가격 주제(Subject)의 행동을 정의합니다.
+ */
 public interface StockSubject {
+    /**
+     * 주식 관찰자(Observer)를 등록합니다.
+     *
+     * @param observer 등록할 주식 관찰자 객체
+     */
     void registerObserver(StockObserver observer);
+
+    /**
+     * 주식 관찰자(Observer)의 등록을 취소합니다.
+     *
+     * @param observer 취소할 주식 관찰자 객체
+     */
     void removeObserver(StockObserver observer);
+
+    /**
+     * 주식 가격이 변경될 때 등록된 모든 주식 관찰자에게 알립니다.
+     *
+     * @param price 새로운 주식 가격
+     */
     void notifyObservers(double price);
 }
 ```
 
 ```java
-package Observer;
+package observer;
 
+/**
+ * StockObserver 인터페이스는 주식 관찰자(Observer)의 행동을 정의합니다.
+ */
 public interface StockObserver {
+    /**
+     * 주식 가격이 변경될 때 호출되는 메서드입니다.
+     *
+     * @param price 새로운 주식 가격
+     */
     void update(double price);
 }
 ```
 
 ```java
-package Observer;
+package observer;
 
+/**
+ * Investor 클래스는 주식 관찰자(Observer)의 구현입니다.
+ */
 public class Investor implements StockObserver {
     private String name;
 
+    /**
+     * 주식 관찰자(Investor) 객체를 생성합니다.
+     *
+     * @param name 투자자의 이름
+     */
     public Investor(String name) {
         this.name = name;
     }
 
+    /**
+     * 주식 가격이 변경될 때 호출되는 메서드입니다.
+     *
+     * @param price 새로운 주식 가격
+     */
     @Override
     public void update(double price) {
         System.out.println(name + "님, 주식 가격이 " + price + "로 변동했습니다.");
@@ -88,25 +129,43 @@ public class Investor implements StockObserver {
 ```
 
 ```java
-package Observer;
+package observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * StockMarket 클래스는 주식 가격 주제(Subject)를 구현합니다.
+ */
 public class StockMarket implements StockSubject {
     private List<StockObserver> observers = new ArrayList<>();
     private double currentPrice;
 
+    /**
+     * 주식 관찰자(Observer)를 등록합니다.
+     *
+     * @param observer 등록할 주식 관찰자 객체
+     */
     @Override
     public void registerObserver(StockObserver observer) {
         observers.add(observer);
     }
 
+    /**
+     * 주식 관찰자(Observer)의 등록을 취소합니다.
+     *
+     * @param observer 취소할 주식 관찰자 객체
+     */
     @Override
     public void removeObserver(StockObserver observer) {
         observers.remove(observer);
     }
 
+    /**
+     * 주식 가격이 변경될 때 등록된 모든 주식 관찰자에게 알립니다.
+     *
+     * @param price 새로운 주식 가격
+     */
     @Override
     public void notifyObservers(double price) {
         for (StockObserver observer : observers) {
@@ -114,7 +173,11 @@ public class StockMarket implements StockSubject {
         }
     }
 
-    // 주식 가격 업데이트 시 호출
+    /**
+     * 주식 가격을 업데이트하고 관련된 주식 관찰자들에게 알립니다.
+     *
+     * @param newPrice 새로운 주식 가격
+     */
     public void updateStockPrice(double newPrice) {
         currentPrice = newPrice;
         notifyObservers(newPrice);
@@ -123,11 +186,14 @@ public class StockMarket implements StockSubject {
 ```
 
 ```java
-package Observer;
+package observer;
 
+/**
+ * 주식 시장 시스템을 실행하는 메인 클래스입니다.
+ */
 public class main {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // 주식 시장 객체 생성
         StockMarket stockMarket = new StockMarket();
 
@@ -142,7 +208,6 @@ public class main {
         stockMarket.updateStockPrice(150.0); // 주식 가격 상승
         stockMarket.updateStockPrice(130.0); // 주식 가격 하락
     }
-
 }
 ```
 

@@ -63,7 +63,7 @@ public class Singleton {
 
 `synchronized`를 사용하여 getInstance() 메소드를 동기화하면 멀티스레드 환경에서의 동시 접근을 막을 수 있습니다. 하지만 성능 저하가 발생할 수 있습니다.
 
-1. **처음부터 Singleton 인스턴스 생성**
+2. **처음부터 Singleton 인스턴스 생성**
 
 ```java
 public class Singleton {
@@ -83,7 +83,7 @@ public class Singleton {
 
 클래스가 로딩될 때 인스턴스를 생성하므로 동기화 문제와 성능 문제를 해결합니다. 그러나 사용하지 않을 경우 자원이 낭비될 수 있습니다.
 
-1. **DCL(Double-Checked Locking)**
+3. **DCL(Double-Checked Locking)**
 
 ```java
 public class Singleton {
@@ -265,7 +265,7 @@ public class main {
 }
 ```
 
-아래 코드는 **`Manager`** 클래스를 Enum으로 정의하고, **`INSTANCE`**를 통해 싱글톤 인스턴스를 생성합니다. 이렇게 하면 Enum의 특성으로 인해 JVM에서 안전하게 싱글톤이 보장됩니다.
+아래 코드는 **`Manager`** 클래스를 Enum으로 정의하고, `INSTANCE`를 통해 싱글톤 인스턴스를 생성합니다. 이렇게 하면 Enum의 특성으로 인해 JVM에서 안전하게 싱글톤이 보장됩니다.
 
 ```java
 package Singleton_E;
