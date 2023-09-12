@@ -25,11 +25,11 @@
 
 ## Builder Pattern
 
-### 패턴 소개
+### 패턴 소개🧐
 
 빌더 패턴(Builder Pattern)은 객체 생성을 단순화하고 가독성을 향상시키는 디자인 패턴 중 하나입니다.
 
-### 코드 소개
+### 코드 소개👻
 
 코드 소개
 
@@ -59,7 +59,7 @@ Builder Method 패턴을 사용하여 Builder Pattern형식으로 구현한 객�
 6. **textBuilder 클래스**: CSV 형식의 텍스트를 생성하는 구체적인 Builder 클래스로, CSV 파일의 제목과 항목 목록을 작성하는 메서드를 제공합니다.
 7. **User 클래스**: 프로그램의 진입점입니다. **`coffeeRecipe`** 객체를 생성하고, Builder 인스턴스를 생성하고, Director를 사용하여 다양한 형식의 문서를 생성하고 출력합니다.
 
-### 개선 목표
+### 개선 목표👁️
 
 Builder Pattern의 또다른 형태인 
 
@@ -70,7 +70,7 @@ Builder Pattern의 또다른 형태인
 |  | <img src=”./Builder1.drawio.png”> | <img src="./Builder2.drawio.png"> |
 | class 추가 생성 방법  | Calss 생성 후, Enum을 수정한다.  | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
 
-### 변화
+### 변화 ❤️
 
 - coffeeRecipe 클래스 생성
     - 
@@ -96,7 +96,7 @@ Builder Pattern의 또다른 형태인
 
 해당 클래스는 내부 클래스를 가집니다. 
 
-### 정리
+### 정리  🐾
 
 Builder Pattern을 조합하여 얻은 장점은 다음과 같습니다. 
 
@@ -111,7 +111,7 @@ Builder Pattern을 조합하여 얻은 장점은 다음과 같습니다.
 
 ## Factory Pattern
 
-### 패턴 소개
+### 패턴 소개🧐
 
 팩토리 패턴(Factory Pattern)은 객체지향 디자인 패턴 중 하나로, 객체를 생성하는 과정을 캡슐화하고 이를 통해 객체를 생성하는 인터페이스를 제공합니다. 이 패턴은 객체 생성과 객체 사용을 분리시켜 유연하고 확장 가능한 코드를 작성하는 데 도움을 줍니다.
 
@@ -123,7 +123,7 @@ Builder Pattern을 조합하여 얻은 장점은 다음과 같습니다.
 
 이번 코드에서는 객체 생성 과정을 추상화하고, 클라이언트 코드와 분리하여 의존성을 낮추려는 경우를 구현했습니다. 
 
-### 코드 소개
+### 코드 소개👻
 
 Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle) 객체를 생성하고 사용하는 예제. 입니다. Factory Method 패턴이란, 객체 생성을 캡슐화하고 서브클래스에서 객체 생성 방법을 결정하는 디자인 패턴입니다.
 
@@ -154,22 +154,23 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 | HybridCar | vehicle의 구현 클래스 |
 | Truck | vehicle의 구현 클래스 |
 
-### 개선 목표
+### 개선 목표👁️
 
 팩토리 메서드 패턴의 큰 단점은 제품 객체의 갯수마다 공장 서브 클래스를 모두 구현해야되서 클래스 폭발이 일어날수 있다는 점입니다. 이를 Reflection API를 이용해 동적으로 처리하여 서브 클래스 폭발을 막는 패턴입니다. 기존에 수업시간에 Enum을 활용하여 폭발적으로 코드를 생성해야하는 문제를 해결했지만, Enum 객체는 상속이 불가능하다는 한계가 존재한다. 
 
 따라서, 자바의 클래스를 이용하여 동적으로 등록하고 인스턴스를 초기화하는 Dynamic Factory Pattern을 통해 구현한다. 이를 통해 팩토리 매서드의 서브 클래싱 부피가 늘어나는 한계를 극복하는 것을 목표로 한다.  특히, 동적으로 객체를 생성함으로 유연성을 확보할 수 있을 것 입니다.
 
-### 변화
+### 변화 ❤️
 
-|  | 전 | 후 |
+|  | uml | class 추가 생성 방법  |
 | --- | --- | --- |
-|  | <./FactoryPattern1.drawio.png> | <./FactoryPattern.png> |
-| class 추가 생성 방법  | Calss 생성 후, Enum을 수정한다.  | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
+| 전 | <img src=”./Builder1.drawio.png”> | Calss 생성 후, Enum을 수정한다. 
+ |
+| 후 | <img src="./Builder2.drawio.png"> | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
 
 이전, 후 공통적으로 Vehicle interface를 상속받아 vehicle의 종류들을 직접적으로 구현하면서 구현부와 정의부를 나눴습니다. 이는 템플릿을 통해 상위클래스만 보고도 하위 클래스가 어떻게 처리되는 지 알 수 있다는 장점을 습니다. 
 
-### 정리
+### 정리  🐾
 
 이를 통해 얻은 장점은 다음과 같습니다. 
 
@@ -179,7 +180,7 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 
 ## State Pattern
 
-### 패턴 소개
+### 패턴 소개🧐
 
 상태 패턴의 주요 특징 및 장점은 다음과 같습니다. 
 
@@ -190,7 +191,7 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 
 예를 들어, 아침, 점심, 야간에 따라 경비 시스템의 역할이 달라질 경우, 상황(State)에 따라 다른 메소드를 구현할 수 있게 할 수 있습니다. 
 
-### 코드 소개
+### 코드 소개👻
 
 상태 패턴(State Pattern)을 활용하여 시간에 따라 동작이 변경되는 시계 애플리케이션을 구현한 예제입니다. 각 상태를 Hours에 Enum으로 저장하고, Enum과 HashMap을 사용하여 SafeFrame에서 Key(시간)값으로 상태를 찾아 변화시킬 수 있도록합니다. 
 
@@ -257,7 +258,7 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 
 이러한 클래스와 함수들을 조합하여 시계 애플리케이션을 구현하고, 시간에 따라 다양한 동작을 수행하도록 되어 있습니다.
 
-### 개선 목표
+### 개선 목표👁️
 
 교안의 State Pattern은 State가 늘어남에 따라 If 구문을 늘려감으로 비효율이 발생했다. 
 
@@ -301,7 +302,7 @@ public static void main(String[] args) {
 
 1. Hash Map을 직접적으로 사용하는 Safe Frame이 map을 가지고 있지 않기 때문에 논리적으로 맞지 않는다. 따라서 timeMap을 SafeFrame이 객체로 가질 수 있게 한다. 
 
-### 해결 방안
+### 해결 방안 👁️ ❤️
 
 1. Safe frame에서 makeMap 함수를 통해 해시맵을 초기화해준다. 
     
@@ -337,7 +338,7 @@ private static HashMap<Integer, Hours> timeMap = new HashMap<Integer, Hours>();
 
 이때, private static으로 선언해주어 후에 외부에서 timeMap을 변경할 수 없도록 한다. 이는 디자인 패턴의 Open & Closed 원칙을 지키기 위해 필요하다. 외부에서 접근할 수 없게 함으로 보안을 강화한다. (Closed) 
 
-### 정리
+### 정리   🐾
 
 해당 변경을 통해 얻은 장점은 다음과 같습니다. 
 
