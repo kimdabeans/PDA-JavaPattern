@@ -1,5 +1,7 @@
 ## Proxy 패턴 
 
+![프록시](https://github.com/JZU0/Java-design-patterns/assets/97423172/849e2557-3d74-4439-a0f1-81fd8c2fc881)
+
 프록시 패턴은 대상 원본 객체를 **대리하여 대신 처리하게 함으로써 로직의 흐름을 제어**하는 행동 패턴이다.
 
 
@@ -53,7 +55,7 @@
 
 주식 트레이딩 시스템은 약 3초의 시간이 걸리며, 완료 됐을 경우 주식 종류를 받는다.
 
-#### 먼저 proxy 패턴을 적용하지 않았을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/beforeProxy) 
+#### 먼저 proxy 패턴을 적용하지 않았을 때 : [전체 코드](beforeProxy) 
 ##### 메인 클래스와 결과를 간략히 살펴보면 다음과 같다.
 ```public class Main {
 	public static void main(String[] args) {
@@ -74,7 +76,7 @@
 
 *이때 proxy 패턴이 큰 역할을 한다!*
 
-#### proxy 패턴을 적용했을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterProxy) 
+#### proxy 패턴을 적용했을 때 : [전체 코드](afterProxy) 
 ##### 메인 클래스와 결과를 간략히 살펴보면 다음과 같다.
 ```public class Main {
 	public static void main(String[] args) {
