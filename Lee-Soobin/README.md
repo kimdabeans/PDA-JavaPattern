@@ -38,5 +38,3 @@ Spring 프레임워크 내에서 자주 사용되는 `Singleton Pattern`, `Facto
 ![ ](./resources/images/020.png)
 
 ---
-
-감사합니다.
