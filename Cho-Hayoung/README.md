@@ -21,7 +21,14 @@
         1. 패턴 소개 
         2. 코드 소개 
         3. 개선 목표 
-        4. 해결방안 
+        4. 해결방안
+      
+개별 pattern 별로 javadoc은 
+1. builder Pattern : ./BuilderPattern/doc/java0825_builder2
+2. factory Pattern : ./BuilderPattern/doc/FactoryPattern
+3. State Pattern : ./State_Patter2/doc/statePattern-javadoc
+   에 있습니다.
+   개별 class 에 대한 세부 사항은 javadoc을 참고해주세요
 
 ## Builder Pattern
 
