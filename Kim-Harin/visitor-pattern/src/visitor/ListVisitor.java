@@ -2,6 +2,8 @@ package visitor;
 /**
  * <h3>ListVisitor 클래스는 {@link Visitor}의 구체적인 구현체로, 디렉토리 내의 엔트리를 나열합니다.</h3>
  *
+ * @version 1.0.1
+ * @author harin
  */
 public class ListVisitor extends Visitor {
     /**

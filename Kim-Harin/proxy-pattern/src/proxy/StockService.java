@@ -6,8 +6,8 @@ package proxy;
  * StockService 인터페이스는 주식 가격 데이터를 가져오는 역할을 정의합니다.
  * </p>
  *
- *  * @version 1.0.1
- *  * @author harin
+ *  @version 1.0.1
+ *  @author harin
  */
 
 public interface StockService {

@@ -9,6 +9,8 @@ package state;
  * @see AccountStatus
  * @see Context
  * @see FrozenState
+ * @version 1.0.1
+ * @author harin
  */
 class OpenState implements AccountStatus {
 

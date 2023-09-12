@@ -2,6 +2,8 @@ package visitor;
 /**
  * <h3>File 클래스는 파일 엔트리를 나타내며, {@link Entry} 클래스를 확장합니다.</h3>
  *
+ * @version 1.0.1
+ * @author harin
  */
 public class File extends Entry {
     /**

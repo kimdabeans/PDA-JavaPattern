@@ -2,6 +2,8 @@ package visitor;
 /**
  * <h3>Entry 클래스는 {@link Element}를 구현하는 추상 클래스로, 엔트리(파일 또는 디렉토리)의 공통 동작을 정의합니다.</h3>
  *
+ * @version 1.0.1
+ * @author harin
  */
 public abstract class Entry implements Element {
     /**

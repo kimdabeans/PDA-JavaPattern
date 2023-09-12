@@ -10,6 +10,8 @@ package state;
  * @see Context
  * @see OpenState
  * @see FrozenState
+ * @version 1.0.1
+ * @author harin
  */
 interface AccountStatus {
     /**

@@ -2,6 +2,8 @@ package visitor;
 /**
  * <h3>Visitor 클래스는 방문자 패턴을 구현하기 위한 추상 클래스로, {@link File} 및 {@link Directory}를 방문하는 메서드를 정의합니다.</h3>
  *
+ * @version 1.0.1
+ * @author harin
  */
 
 public abstract class Visitor {

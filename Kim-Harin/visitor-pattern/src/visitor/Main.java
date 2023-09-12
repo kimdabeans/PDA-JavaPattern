@@ -1,8 +1,9 @@
 package visitor;
 /**
- * @version : 1.0.1
- * @author : harin
  * <h3> Main 클래스는 주어진 예제 코드를 실행하는 메인 클래스입니다. </h3>
+ *
+ * @version 1.0.1
+ * @author harin
  */
 public class Main {
     public static void main(String[] args) {

@@ -21,6 +21,8 @@ import java.awt.event.ActionListener;
  * @see AccountStatus
  * @see OpenState
  * @see FrozenState
+ * @version 1.0.1
+ * @author harin
  */
 public class BankAccount extends Frame implements ActionListener, Context {
     private int balance;

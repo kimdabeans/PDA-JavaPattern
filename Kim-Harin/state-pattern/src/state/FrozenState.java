@@ -7,6 +7,8 @@ package state;
  * </p>
  * @see AccountStatus
  * @see Context
+ * @version 1.0.1
+ * @author harin
  */
 class FrozenState implements AccountStatus {
 

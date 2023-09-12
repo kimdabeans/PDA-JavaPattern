@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.List;
 /**
  * <h3>Directory 클래스는 디렉토리 엔트리를 나타내며, {@link Iterable} 인터페이스를 구현합니다.</h3>
+ *
+ * @version 1.0.1
+ * @author harin
  */
 public class Directory extends Entry implements Iterable<Entry> {
     /**
