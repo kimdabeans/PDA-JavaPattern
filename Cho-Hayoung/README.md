@@ -37,7 +37,7 @@ Builder Method 패턴을 사용하여 Builder Pattern형식으로 구현한 객�
 
 아래 코드에서는 CSV와 HTML 형식의 문서를 생성하였으며, 이러한 형식을 쉽게 추가하거나 변경할 수 있습니다.(Open) Builder 패턴을 통해 객체 생성 및 설정 과정을 추상화하고, 가독성 높은 코드를 작성할 수 있습니다. 
 
-- <img src="./FactoryPattern.png">
+- <img src="./Builder2.drawio.png">
 
 | 이름  | 설명  |
 | --- | --- |
@@ -183,8 +183,8 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 
 |  | uml | class 추가 생성 방법  |
 | --- | --- | --- |
-| 전 | <img src=”./FactoryPattern1.drawio.png”> | Calss 생성 후, Enum을 수정한다.  |
-| 후 | <img src=”./FactoryPattern.png”> | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
+| 전 | <img src="./FactoryPattern1.drawio.png"> | Calss 생성 후, Enum을 수정한다.  |
+| 후 | <img src="./FactoryPattern.png"> | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
 
 이전, 후 공통적으로 Vehicle interface를 상속받아 vehicle의 종류들을 직접적으로 구현하면서 구현부와 정의부를 나눴습니다. 이는 템플릿을 통해 상위클래스만 보고도 하위 클래스가 어떻게 처리되는 지 알 수 있다는 장점을 습니다. 
 
