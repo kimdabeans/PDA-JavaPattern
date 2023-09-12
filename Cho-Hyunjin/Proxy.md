@@ -199,43 +199,24 @@ Restaurant.java
 
 ```java
 /**
- * FoodOrderProxy 클래스는 FoodOrder 인터페이스를 구현하며, 프록시 역할을 수행합니다.
+ * Restaurant 클래스는 FoodOrder 인터페이스를 구현한 실제 식당 클래스입니다.
  */
-public class FoodOrderProxy implements FoodOrder {
+public class Restaurant implements FoodOrder {
     /**
      * 주문 고객의 이름을 나타내는 변수
      */
     private String customerName;
 
     /**
-     * 실제 식당 객체를 참조하는 변수
+     * Restaurant 클래스의 기본 생성자입니다.
+     * (식당 객체 생성 과정은 설명에서 생략되었습니다.)
      */
-    private Restaurant real;
-
-    /**
-     * FoodOrderProxy 클래스의 기본 생성자입니다.
-     * 주문 고객의 이름을 "미정"으로 초기화하고 실제 식당 객체를 초기화하지 않습니다.
-     */
-    public FoodOrderProxy() {
-        this.customerName = "미정";
-        this.real = null;
-    }
-
-    /**
-     * FoodOrderProxy 클래스의 생성자입니다.
-     *
-     * @param customerName 주문 고객의 이름
-     */
-    public FoodOrderProxy(String customerName) {
-        this.customerName = customerName;
-        this.real = null;
+    public Restaurant() {
+        // 식당 객체 생성
     }
 
     @Override
     public void setCustomerName(String name) {
-        if (real != null) {
-            real.setCustomerName(name);
-        }
         this.customerName = name;
     }
 
@@ -246,22 +227,17 @@ public class FoodOrderProxy implements FoodOrder {
 
     @Override
     public void placeOrder(String foodItem) {
-        realize();
-        real.placeOrder(foodItem);
-    }
-
-    /**
-     * 실제 객체를 생성하고 주문자의 이름을 설정합니다.
-     */
-    private void realize() {
-        if (real == null) {
-            real = new Restaurant();
-            real.setCustomerName(customerName);
+        System.out.println("고객 " + customerName + "의 주문: " + foodItem + " 준비 중입니다.");
+        // 음식 준비 시뮬레이션
+        try {
+            Thread.sleep(2000); // 2초 대기
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        System.out.println(foodItem + "가 완료되었습니다.");
     }
 }
 ```
-
 Main.java
 
 ```java
@@ -294,9 +270,9 @@ public class Main {
 
 **프록시 패턴 적용 후:**
 
-**1. 객체 생성 및 초기화 최적화:** **`FoodOrderProxy`**를 사용하여 객체를 생성 및 초기화하고, 필요한 경우 실제 **`Restaurant`** 객체를 생성합니다. 이로 인해 객체 생성 및 초기화 작업을 효율적으로 진행할 수 있습니다.<br>
+**1. 객체 생성 및 초기화 최적화:** **`FoodOrderProxy`** 를 사용하여 객체를 생성 및 초기화하고, 필요한 경우 실제 **`Restaurant`** 객체를 생성합니다. 이로 인해 객체 생성 및 초기화 작업을 효율적으로 진행할 수 있습니다.<br>
 **2. 고객 정보 관리 개선:** **`FoodOrderProxy`** 내에서 고객 정보를 관리하며, 클라이언트는 프록시를 통해 고객 정보를 업데이트할 수 있어 효율적입니다.<br>
-**3. 코드 분리 및 유지보수 용이성:** 주문 처리 관련 로직은 **`Restaurant`** 클래스에서 분리되고, **`FoodOrderProxy`**에 중첩되어 있어 코드가 더 모듈화되어 유지보수를 쉽게 할 수 있습니다. 새로운 로직이나 변경이 필요한 경우 프록시 클래스만 수정하면 되어 효율적입니다.<br>
+**3. 코드 분리 및 유지보수 용이성:** 주문 처리 관련 로직은 **`Restaurant`** 클래스에서 분리되고, **`FoodOrderProxy`** 에 중첩되어 있어 코드가 더 모듈화되어 유지보수를 쉽게 할 수 있습니다. 새로운 로직이나 변경이 필요한 경우 프록시 클래스만 수정하면 되어 효율적입니다.<br>
 **4. 지연 로딩 및 비효율성 해결:** 실제 객체를 필요한 시점에 생성하므로 대기 시간이 오래 걸리는 작업에 대한 블록을 방지하고, 클라이언트 코드는 다른 작업을 수행할 수 있어 효율적입니다.<br>
 
 # UML
