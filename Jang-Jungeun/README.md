@@ -16,11 +16,12 @@
 ### 1-2. Adapter Pattern UML 설명
 <img src="https://github.com/jang294/PDA-JavaPattern/assets/98522102/f85d9d10-6fcd-4eb8-a282-9b51abb50ade" width = "700">  
 | 이름 | 설명 |
-| :-------: | :-------: |
+| :-----------------------: | ---- |
 | Adapter 클래스 | Client 클래스를 확장하여 CurrencyConverter 인터페이스를 구현한 클래스 |
 | Client 클래스 | Client 객체를 생성하고 환율 변환을 수행하는 클래스 |
 | CurrencyConverter 인터페이스 | 화폐 금액을 변환하는 메서드를 정의하는 인터페이스 |
 | main 클래스 | CurrencyConverter를 사용하여 원화를 다른 통화로 변환하는 예제를 실행하는 클래스. Adapter 인스턴스에서 변환하고 싶은 금액(원화)와 현 시점의 달러의 환율, 유로의 환율, 엔화의 환율을 입력. |
+
 
 ### 1-3. Adapter Pattern 을 적용하기 전과 후 비교
 |  | 적용 전 | 적용 후 |
