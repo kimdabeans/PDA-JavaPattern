@@ -269,7 +269,7 @@ public class Main {
 javadoc 파일은 **StateAfter/docs** 폴더에 있습니다.<br>
 | 클래스명 | 링크                                        |
 | --------- | ---------------------------------------- |
-| TrafficLight Class | [TrafficLight Class](./StateAfter/docs/TrafficLight.html) |
+| Main Class | [Main Class](./StateAfter/docs/Main.html) |
 | TrafficLightState Class | [TrafficLightState Class](./StateAfter/docs/TrafficLightState.html) |
 | RedLightState Class | [RedLightState Class](./StateAfter/docs/RedLightState.html) |
 | RedLightState Class | [RedLightState Class](./StateAfter/docs/RedLightState.html) |
