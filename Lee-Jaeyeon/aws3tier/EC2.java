@@ -1,6 +1,6 @@
 package aws3tier;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class EC2 {
@@ -8,7 +8,7 @@ public class EC2 {
     private InstanceType instanceType;
     private AMI ami;
     private String instanceId;
-    private ArrayList<SecurityGroup> securityGroups;
+    private List<SecurityGroup> securityGroups;
     private String vpcId;
     private String subnetId;
     private String privateIp;
@@ -16,10 +16,15 @@ public class EC2 {
     private InstanceState instanceState;
     private int currentConnections; // LeastConnectionsStrategy에 사용할 멤버변수
 
-    public EC2(InstanceType instanceType, AMI ami, String instanceId) {
-        this.instanceType = instanceType;
-        this.ami = ami;
-        this.instanceId = instanceId;
+    public EC2(EC2Configuration config) {
+        this.instanceType = config.getInstanceType();
+        this.ami = config.getAmi();
+        this.instanceId = config.getInstanceId();
+        this.securityGroups = config.getSecurityGroups();
+        this.vpcId = config.getVpcId();
+        this.subnetId = config.getSubnetId();
+        this.privateIp = config.getPrivateIp();
+        this.publicIp = config.getPublicIp();
         this.instanceState = InstanceState.PENDING; // 생성 시 PENDING
     }
 
@@ -40,6 +45,7 @@ public class EC2 {
             this.instanceState = InstanceState.RUNNING;
             setRandomConnections();
         }
+        // ELB LeastConnectionsStrategy에 사용됩니다.
     }
 
     private void setRandomConnections() {
