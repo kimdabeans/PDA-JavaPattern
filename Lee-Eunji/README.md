@@ -14,5 +14,5 @@
   - 코드 폴더
     
 ### Singleton Pattern
-  - [Singleton pattern 기술 블로그](https://github.com/eunsiver/PDA-JavaPattern/blob/Lee-Eunji/Lee-Eunji/4_/Singleton.md)
+  - [Singleton pattern 기술 블로그](https://github.com/eunsiver/PDA-JavaPattern/blob/Lee-Eunji/Lee-Eunji/4_Singleton.md)
   - 코드 폴더
