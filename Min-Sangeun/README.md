@@ -6,7 +6,7 @@
 [Strategy Pattern 정리 링크](https://harmless-key-594.notion.site/Strategy-Pattern-adf84e3eb9c944d99c29d0b004a98bfc?pvs=4)
 
 ## 2. State Pattern
-체가 특정 상태에 따라 행위를 달리하는 상황에서, 상태를 조건문으로 검사해서 행위를 달리하는 것이 아닌, 상태를 객체화하여 상태가 행동할 수 있도록 위임하는 패턴
+객체가 특정 상태에 따라 행위를 달리하는 상황에서, 상태를 조건문으로 검사해서 행위를 달리하는 것이 아닌, 상태를 객체화하여 상태가 행동할 수 있도록 위임하는 패턴
 
 [State Pattern 정리 링크](https://harmless-key-594.notion.site/State-Pattern-417e05a7ef9848d38796ab7df9f3f893?pvs=4)
 
