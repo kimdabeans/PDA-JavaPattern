@@ -1,5 +1,7 @@
 ## TemplateMethod 패턴
 
+![템플릿](https://github.com/JZU0/Java-design-patterns/assets/97423172/05fc2f5b-da03-4c0c-a7da-a19b537e4e9d)
+
 TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클래스로 캡슐화**해 전체 일을 수행하는 구조는 바꾸지 않으면서 특정 단계에서 수행하는 내역을 바꾸는 패턴이다.
 
 
@@ -81,9 +83,72 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 #### 상위 추상클래스로 로직을 공통화 하여 코드의 중복을 줄인 것을 확인할 수 있다.
 
 
+---
 
+### 추가적으로 Template Method 실제 사용되는 예시를 보자..!
 
+#### JAVA
+- java.io.InputStream, java.io.OutputStream, java.io.Reader, java.io.Writer 의 일반 메서드를 하위 클래스가 재정의 한다.
+- java.util.AbstractList, java.util.AbstractSet, java.util.AbstractMap 의 일반 메서드를 하위 클래스가 재정의 한다.
+- javax.servlet.http.HttpServlet의 모든 doXXX()메서드는 기본적으로 응답에 HTTP 405 "Method Not Allowed" 리턴 코드를 보내기 때문에 이들을 상속하여 재정의 하여 사용한다.
 
+#### AbstractMap
+
+AbstractMap<K,V> 클래스에 정의 되어있는 get() 메서드를 이를 상속하는 HashMap, TreeMap 등 서브클래스에서 오버라이드하여 자신만의 구현 방법으로 다른 방식으로 재정의 하고 있는 것을 볼 수 있다. 꼭 추상 메소드를 재정의 해야되는게 아니라 일반 메소드도 템플릿에 고정되어 실행되는 것이라면 오버라이딩하여 재정의 하면 곧 알고리즘 변화가 되기 때문이다.
+
+###### AbstractMap<K,V> 의 get() 메소드
+```
+public V get(Object key) {
+    Iterator<Entry<K,V>> i = entrySet().iterator();
+    if (key==null) {
+        while (i.hasNext()) {
+            Entry<K,V> e = i.next();
+            if (e.getKey()==null)
+                return e.getValue();
+        }
+    } else {
+        while (i.hasNext()) {
+            Entry<K,V> e = i.next();
+            if (key.equals(e.getKey()))
+                return e.getValue();
+        }
+    }
+    return null;
+}
+```
+
+###### HashMap<K,V> extends AbstractMap<K,V> 의 get() 메소드
+```
+public V get(Object key) {
+    Node<K,V> e;
+    return (e = getNode(hash(key), key)) == null ? null : e.value;
+}
+```
+
+###### TreeMap<K,V> extends AbstractMap<K,V> 의 get() 메소드
+```
+public V get(Object key) {
+    Entry<K,V> p = getEntry(key);
+    return (p==null ? null : p.value);
+}
+```
+
+---
+
+### Strategy Pattern VS Template Method
+
+#### 비슷한 점
+전략 패턴과 템플릿 메소드 패턴은 **알고리즘을 때에 따라 적용한다는 점**에서 공통점을 가지고 있다. 전략 및 템플릿 메소드 패턴은 [OCP](#ocp)을 충족하고 코드를 변경하지 않고 소프트웨어 모듈을 쉽게 확장할 수 있게 한다.
+
+#### 다른 점
+전략 패턴은 **합성**을 통해 해결책을 구하고, 템플릿 메소드 패터는 **상속**을 통해 해결책을 제시한다. 그래서 전략 패턴은 클라이언트와 객체 간의 결합이 느슨한 반면, 템플릿 메소드 패턴에서는 두 모듈의 결합도가 더 높다.
+전략 패턴에서는 대부분 인터페이스를 사용하지만 템플릿 메소드 패턴에서는 주로 추상 클래스나 구체적인 클래스를 사용한다.
+ 
+---
+
+#### OCP
++ 개방 폐쇄 원칙 - OCP (Open Closed Principle)
+> 개방 폐쇄의 원칙(OCP)이란 기존의 코드를 변경하지 않으면서, 기능을 추가할 수 있도록 설계가 되어야 한다는 원칙을 말한다. 보통 OCP를 확장에 대해서는 개방적(open)이고, 수정에 대해서는 폐쇄적(closed)이어야 한다는 의미로 정의한다.
 
 
  
