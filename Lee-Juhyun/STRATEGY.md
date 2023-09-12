@@ -27,35 +27,75 @@ strategy 패턴은 **같은 기능이지만 서로 다른 전략**을 가진 클
 
 크게 덧셈과 뺄셈을 진행하는 계산기라고 할 때, 필요한 때에 연산을 바꿔서 진행할 수 있다.
 
+###### ICalculator interface
+```
+public interface ICalculator {
+    public  abstract double execute(double n1, double n2);
+}
+```
+###### PlusCalculator class
+```
+public class PlusCalculator implements ICalculator {
+    @Override
+    public double execute(double n1, double n2) {
+        return n1+n2;
+    }
+}
+```
+###### MinusCalculator class
+```
+public class MinusCalculator implements ICalculator {
+    @Override
+    public double execute(double n1, double n2) {
+        return n1-n2;
+    }
+}
+```
+PlusCalculator와 MinusCalculator는 ICalculator를 상속받아 각자의 기능을 구현한다.
 
-#### 먼저 TemplateMethod 패턴을 적용하지 않았을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/beforeTemplateMethod) 
-##### 만드는 법을 비교해보자.
-|된장찌개|김치찌개|
-|:---:|:---:|
-|육수를 우린다|육수를 우린다|
-|양파를 넣는다|양파를 넣는다|
-|파를 넣는다|파를 넣는다|
-|된장을 푼다|김치를 넣는다|
+###### Student class
+```
+public class Student {
+    private ICalculator ICalculator;
+    private double n1;
+    private double n2;
 
-#### 간단하게 봤을 때도 중복되는 단계가 많다는 것을 알 수 있다.
+    public double operate(){
+        return ICalculator.execute(n1,n2);
+    }
 
-##### 하나의 공통된 것을 두고, 상속을 통해 자식 클래스에서 다른 부분을 추가하면 코드 중복을 최소화 할 수 있을 것이라 판단된다.
+    public void setCalculator(ICalculator ICalculator){
+        this.ICalculator = ICalculator;
+    }
 
-*이때 TemplateMethod 패턴을 사용한다.*
+    public void changeNumber(double n1, double n2) {
+        this.n1 = n1;
+        this.n2 = n2;
+    }
+}
+```
+setCalculator 메소드를 통해 원하는 연산으로 교체할 수 있다.
 
-#### TemplateMethod 패턴을 적용했을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterTemplateMethod) 
-##### 만드는 법을 비교해보자.
-|                   공통된 단계                    |
-|:-------------------------------------------:|
-| 1.육수를 우린다<br/>2. 양파를 넣는다<br/>3.파를 넣는다.<br/> | 
-
-|                    된장찌개                     |김치찌개|
-|                    :---:                    |:---:|
-|                   된장을 푼다                    |김치를 넣는다|
-
-
-##### 공통된 단계를 하나로 묶고, 다른 부분을 구체화하여 중복을 최소한 것을 볼 수 있다.
-
+###### Main class
+```
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        
+        student.changeNumber(9,12);
+        
+        student.setCalculator(new PlusCalculator());
+        double result1 = student.operate();
+        System.out.println(result1);
+        
+        student.setCalculator(new MinusCalculator());
+        double result2 = student.operate();
+        System.out.println(result2);
+    }
+}
+```
+###### 실행결과
+![result](https://github.com/JZU0/Java-design-patterns/assets/97423172/2a7bb3f6-b583-4338-bf3f-d2c653b778bc)
 
 ---
 
@@ -63,13 +103,14 @@ strategy 패턴은 **같은 기능이지만 서로 다른 전략**을 가진 클
 
 |<b>TemplateMethod UML</b> |
 | :--: |
-| ![TemplateMethodUML](https://github.com/JZU0/Java-design-patterns/assets/97423172/869457ca-b6a6-4501-8956-9b111b36115b)|
+| ![TemplateMethodUML](https://github.com/JZU0/Java-design-patterns/assets/97423172/ad0e7f2b-af0e-450b-948e-f7222b8a1119)|
 
-#### Stew 클래스 안에는 makeStew 메소드가 정의되어 있고 makeStew 메소드 안에서 makeBroth, addOnions, addGreenOnions라는 세 개의 메소드와 addExtraIngredients 메소드가 사용된다.
-#### 앞의 세개의 메소드는 공통된 부분을 정의한 부분이므로 private 메소드로 변경하지 않도록 구현했다. 
-#### addExtraIngredients 메소드는 추상 메소드이고, 이 메소드를 실제로 구현하는 것은 Stew의 하위 클래스인 SoybeanPasteStew와 KimchiStew이다. 
-#### 상위 추상클래스로 로직을 공통화 하여 코드의 중복을 줄인 것을 확인할 수 있다.
 
+#### ICalculator 인터페이스에는 연산을 위한 추상 메소드가 정의되어있다.
+#### PlusCalculator 클래스 안에는 ICalculator 인터페이스를 구현하는 클래스 중 하나이다. 인터페이스를 구현한다는 것은 execute 메소드를 구현하는 것이다.
+#### MinusCalculator 클래스 또한 ICalculator 인터페이스의 execute 메소드를 구현한다.
+#### Student는 계산하는 학생을 표현한 클래스이다. setCalculator 메소드로 계산기의 연산을 변화시킨다.
+#### 연산을 미리 정의해두면서, 연산 교체가 쉽게 가능하다는 것을 알 수 있다. 
 
 
 
