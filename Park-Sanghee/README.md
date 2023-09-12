@@ -2,7 +2,7 @@
 ## Contents
 [Design Pattern](#Design-Pattern)  
 [Strategy Pattern](#Strategy-Pattern-Example)  
-[Moreover… Strategy Pattern With Enum](#Moreover…-Strategy-Pattern-With-Enum)  
+[Moreover Strategy Pattern With Enum](#Moreover-Strategy-Pattern-With-Enum)  
 [Template Method Pattern](#Template-Method-Pattern-Example)  
 [Factory Method Pattern](#Factory-Method-Pattern-Example)
 
@@ -369,7 +369,7 @@ Main 클래스는 사용자와 상호 작용하여 페이지 교체 알고리즘
 
 <br/>
 
-##### Moreover… Strategy Pattern With Enum
+##### Moreover Strategy Pattern With Enum
 Strategy 패턴을 적용하여 작성한 코드의 Main.java에서 원하는 페이지 교체 알고리즘을 선택하는 코드에서 알고리즘의 개수가 더 늘어난다면 if-else 문은 더 길어질 것이고, 불필요한 코드의 양은 더 많아질 것이다.  
 동일한 타입의 값이 추가되고 동일한 동작을 하는 것에 비해 너무 많은 반복성 코드가 발생하게 된다.  
 이를 해결하기 위해 Enum을 사용하여 이 상황을 해결하고자 했다.  
