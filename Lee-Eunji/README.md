@@ -1,8 +1,8 @@
 ## 이은지 Design Pattern
 
-- Design Pattern 폴더 : Strategy, Factory Method, Template Method, Singleton Pattern을 포함하고 있습니다.
-- src 폴더 : javadoc가 적용된 전체 코드 폴더입니다.
-- javadoc 폴더 : 추출된 pattern들의 javadoc 코드입니다.
+ Design Pattern 폴더 : Strategy, Factory Method, Template Method, Singleton Pattern을 포함하고 있습니다.
+ src 폴더 : javadoc가 적용된 전체 코드 폴더입니다.
+ javadoc 폴더 : 추출된 pattern들의 javadoc 코드입니다.
 
 ### Strategy Pattern
   - [strategy pattern 기술 블로그](https://github.com/eunsiver/PDA-JavaPattern/blob/Lee-Eunji/Lee-Eunji/Design_Pattern/1_StrategyPattern.md)
