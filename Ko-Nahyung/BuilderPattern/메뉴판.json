@@ -1,0 +1,23 @@
+{
+	"제목": "메뉴판",
+	"찌개류": {
+		"content1": "김치찌개",
+		"content2": "된장찌개",
+		"content3": "부대찌개",
+		"content4": "순두부찌개"
+	},
+	"볶음류": {
+		"content1": "돼지불고기",
+		"content2": "소불고기",
+		"content3": "돼지고기 숙주 볶음",
+		"content4": "제육볶음"
+	},
+	"음료/주류": {
+		"content1": "망고주스",
+		"content2": "콜라",
+		"content3": "사이다",
+		"content4": "소주",
+		"content5": "맥주",
+		"content6": "막걸리"
+	}
+}
