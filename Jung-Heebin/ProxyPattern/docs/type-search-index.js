@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"AfterProxy","l":"main"},{"p":"BeforeProxy","l":"main"},{"p":"AfterProxy","l":"Printable"},{"p":"BeforeProxy","l":"Printable"},{"p":"AfterProxy","l":"Printer"},{"p":"BeforeProxy","l":"Printer"},{"p":"AfterProxy","l":"PrinterProxy"}];updateSearchResults();
