@@ -4,8 +4,6 @@ import java.util.List;
 /**
  * 개인의 주식 포트폴리오를 나타내는 클래스.
  * 주식 포트폴리오는 여러 개의 주식(Stock)을 포함할 수 있다.
- * @filename PersonalPortfolio.java
- * 
  */
 public class PersonalPortfolio implements Stock {
 	private final String buyer;

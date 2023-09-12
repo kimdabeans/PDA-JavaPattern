@@ -1,7 +1,6 @@
 package composite;
 /**
  * 개별 주식을 나타내는 클래스.
- * @filename PersonalStock.java
  */
 public class PersonalStock implements Stock{
 	private String stockName;

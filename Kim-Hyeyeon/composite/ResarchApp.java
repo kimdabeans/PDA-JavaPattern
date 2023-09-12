@@ -1,11 +1,9 @@
 package composite;
 /**
- * 
  * 메인 클래스. 
  * 
  * PersonalStock, PersonalPortfolio의 인스턴스를 생성하고
  * 주식을 포트폴리오에 추가한 후 포트폴리오의 총 가격 및 종목명을 출력
- * @filename ResearchApp.java
  */
 public class ResarchApp {
 

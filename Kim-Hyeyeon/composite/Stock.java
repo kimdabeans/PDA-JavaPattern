@@ -2,9 +2,6 @@ package composite;
 /**
  * 주식의 이름과 가격 정보를 표현하는 인터페이스.
  * 
- * @author Hyeyeon Kim
- * @filename Stock.java
- * 
  */
 public interface Stock {
     /**
@@ -14,7 +11,7 @@ public interface Stock {
      */
 	String getStockName();
 	/**
-     * 주식의 가격을 반환합니다.
+     * 주식의 가격을 반환.
      * 
      * @return 현재 주가.
      */
