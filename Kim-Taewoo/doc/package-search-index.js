@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"KimTaewoo","l":"factorymethod"},{"m":"KimTaewoo","l":"factorymethod.concreteProduct"},{"m":"KimTaewoo","l":"factorymethod.framework"},{"m":"KimTaewoo","l":"singleton"},{"m":"KimTaewoo","l":"singleton.concrete"},{"m":"KimTaewoo","l":"singleton.framework"},{"m":"KimTaewoo","l":"templatemethod"}]
