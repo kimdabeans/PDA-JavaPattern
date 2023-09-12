@@ -18,7 +18,7 @@
    + 기본 UML 클래스 다이어그램
    + 사용시기
    + 장단점
-2. 증권에 적용한 Factory Method Pattern 예제
+2. 증권에 적용한 Factory Method Pattern 예제 : 금융 제품 관리와 공장 메서드 패턴 활용
    + 패턴 적용 전 비효율적인 코드 : before
    + Factory Method Pattern 적용 코드 : after
        - UML 클래스 다이어그램
@@ -67,7 +67,7 @@
     각 제품 구현체마다 팩토리 객체들을 모두 구현해주어야 하기 때문에, 구현체가 늘어날때 마다 팩토리 클래스가 증가하여 서브 클래스 수가 폭발합니다. 따라서 코드의 복잡성이 증가합니다.
 
 
-## Factory Method Pattern : 금융 제품 생성 예제
+## Factory Method Pattern : 금융 제품 관리와 공장 메서드 패턴 활용
 
 ### 팩토리 메서드 패턴 적용 전 코드 : Before
 
