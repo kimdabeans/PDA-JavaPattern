@@ -87,12 +87,6 @@
 }
 ```
 
-![afterproxy](https://github.com/JZU0/Java-design-patterns/assets/97423172/017ead6c-4e1e-42d5-9402-2dc12f02dd78)
-
-
-##### 클라이언트 코드자체는 크게 변하지 않았고, 똑같이 3개의 주식 거래를 하는 코드에 대상 객체 대신 프록시 객체에 할당한 점이 변화된 부분이다.  
-##### 내부 동작 방식은 크게 변경 되었는데, 프록시 객체 내에서 타입 데이터를 지니고 있다가 사용자가 successfulStockTrading()를 호출하면 그때서야 대상 객체를 로드하여 타입을 저장하고 대상 객체의 successfulStockTrading() 메소드를 위임 호출함으로써 실제 메소드를 호출하는 시점에 트레이딩이 진행되기 때문에 불필요한 시간이 줄어든다.
-
 ---
 
 ### 코드의 전체적인 구조를 알기 위해 UML 클래스 다이어그램을 살펴보자.
@@ -101,10 +95,6 @@
 | :--: |
 | ![proxyUML](https://github.com/JZU0/Java-design-patterns/assets/97423172/00998f47-6c57-4859-9021-6d2e3b0bb39d)|
 
-#### Proxy 패턴을 구현하는데 있어 중요한 것은 대상 객체와 프록시 객체를 하나로 묶어주는 인터페이스를 정의하는 것이다. 때문에 StockProxy클래스와 StockMarket클래스를 동일시하기 위해 공통 인터페이스인 ITrading을 정의하였다.
-#### 여기서 StockMarket 클래스는 '본인'을 나타내는 클래스이다. StockMarket 클래스의 인스턴스 생성에 시간이 오래 걸린다는 전제로 프로그램을 작성하였기 때문에 successfulStockTrading 메소드는 무거운 작업을 나타낸다. 
-#### proxy 패턴에서 가장 중요한 StockProxy 클래스는 대리인 역할을 하며, ITrading 인터페이스를 구현한다. type은 타입을 저장하고, proxyStock 필드는 '본인'을 저장한다.
-#### Main 클래스는 StockProxy를 경유해서 StockMarket를 이용하는 클래스이다. 실행 결과를 보면 처음에는 인스턴스(본인)가 생성되지 않고, successfulStockTrading 메소드를 호출한 후에 생성되는 것을 확인할 수 있다. 
 
 
 
