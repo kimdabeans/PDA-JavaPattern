@@ -1,8 +1,17 @@
 package aws3tier;
 
+/**
+ * Represents a subnet within an Amazon VPC (Virtual Private Cloud).
+ * A subnet is a range of IP addresses in your VPC.
+ * <p>
+ * The Subnet class provides identifiers and configurations for the specific subnet
+ * such as the subnet ID, the VPC ID it belongs to, the availability zone in which it resides,
+ * and its CIDR block notation.
+ * </p>
+ */
 public class Subnet {
-    private String subnetId; // 고유한 서브넷 ID
-    private String vpcId; // 해당 서브넷이 속한 VPC ID
-    private AvailabilityZone az; // 서브넷이 위치한 가용 영역
-    private String CIDR_block; // CIDR 블록
+    private String subnetId;
+    private String vpcId;
+    private AvailabilityZone az;
+    private String CIDR_block;
 }
