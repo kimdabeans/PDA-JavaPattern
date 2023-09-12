@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"commandPattern1"},{"l":"commandPattern1.account"},{"l":"commandPattern1.command"},{"l":"commandPattern2"},{"l":"commandPattern2.account"},{"l":"commandPattern2.command"},{"l":"factoryPattern"},{"l":"proxyPattern"},{"l":"strategyPattern"}];updateSearchResults();

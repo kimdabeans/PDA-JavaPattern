@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"afterProxy"},{"l":"afterTemplateMethod"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"strategy"}];updateSearchResults();
