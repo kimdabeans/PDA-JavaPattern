@@ -118,7 +118,7 @@ public class SellOrder {
     }
 
     public void validateOrder() {
-        // 매수 주문 유효성 검사
+        // 매도 주문 유효성 검사
         // 예: 계좌 잔고 확인, 주식 가격 확인 등
     }
 
@@ -128,7 +128,7 @@ public class SellOrder {
     }
 
     public void confirmOrder() {
-        // 매수 주문 확정 처리
+        // 매도 주문 확정 처리
         // 예: 주문 번호 발급, 거래 내역 저장 등
     }
 }
