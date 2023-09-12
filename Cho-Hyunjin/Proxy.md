@@ -60,7 +60,7 @@ public class RestaurantWithoutProxy {
 }
 ```
 Main.java
-```
+```java
 /**
  * 이 클래스는 주문을 처리하는 데 사용되는 식당 객체를 나타냅니다.
  */
@@ -82,7 +82,12 @@ public class MainWithoutProxy {
 }
 ```
 위에 코드는 Proxy 패턴을 적용하지 않은 프로그램입니다.<br>
+
 해당 프로그램의 javadoc은 **ProxyBefore/docs** 에 있습니다.<br>
+| 클래스명 | 링크                                        |
+| --------- | ---------------------------------------- |
+| Main Class | [Main Class](./ProxyBefore/docs/Main.html) |
+| RestaurantWithoutProxy Class | [RestaurantWithoutProxy Class](./ProxyBefore/docs/RestaurantWithoutProxy.html) |
 
 이 프로그램은 아래와 같이 여러가지 비효율적인 부분들이 있습니다.
 
@@ -96,7 +101,7 @@ public class MainWithoutProxy {
 **이러한 단점들을 해결하기 위해 Proxy 패턴을 활용해 코드를 수정해보았습니다.**
 
 FoodOrder.java
-```
+```java
 // FoodOrder 인터페이스
 public interface FoodOrder {
     void setCustomerName(String name);
@@ -218,6 +223,12 @@ public class Main {
 
 # Javadoc
 해당 프로그램의 javadoc은 **ProxyAfter/docs** 에 있습니다.<br>
+| 클래스명 | 링크                                        |
+| --------- | ---------------------------------------- |
+| FoodOrder Class | [FoodOrder Class](./ProxyAfter/docs/FoodOrder.html) |
+| FoodOrderProxy Class | [FoodOrderProxy Class](./ProxyAfter/docs/FoodOrderProxy.html) |
+| Restaurant Class | [Restaurant Class](./ProxyAfter/docs/Restaurant.html) |
+
 # 결론
 
 프록시 패턴이란, 실제 객체를 감싸고, 객체에 접근 및 제어를 추가로 수행하는 중간 역할을 하는 클래스를 생성하는 디자인 패턴을 말합니다. 이 패턴을 사용하면 객체의 생성 및 초기화를 최적화하고, 보안, 캐싱, 리소스 관리, 인터페이스 간소화 등 다양한 장점이 있습니다. 또한 클라이언트 코드와 실제 객체 간의 결합도를 낮추어 유지보수와 확장성을 향상시키며, 코드의 재사용성을 증가시킵니다. 따라서 프록시 패턴은 다양한 소프트웨어 시스템에서 사용될 수 있는 강력한 디자인 패턴 중 하나인 것 같아, 이 패턴을 활용해 더 효율적인 프로그램을 짤 수 있었습니다.
