@@ -775,6 +775,276 @@ RabbitDollProcess 클래스와 CatDollProcess 클래스의 인스턴스를 만�
 <br/>
 <br/>
 
+### Factory Method Pattern Example
+#### Factory Method Pattern?
+Template Method 패턴에서는 상위 클래스에서 처리의 뼈대를 만들고, 하위 클래스에서 구체적인 살을 붙였다.  
+이 패턴을 인스턴스 생성 장면에 적용한 것이 Factory Method 패턴이다.
+
+<br/>
+
+Factory는 ‘공장’ 이라는 의미로, 인스턴스를 생성하는 공장을 Template Method 패턴으로 구성한 것이 Factory Method 패턴이다.
+
+<br/>
+
+Factory Method 패턴에서는 인스턴스 생성 방법을 상위 클래스에서 결정하되 구체적인 클래스 이름까지는 결정하지 않는다.  
+구체적인 살은 모두 하위 클래스에서 붙인다.  
+이로써 인스턴스 생성을 위한 뼈대(프레임워크)와 실제 인스턴스를 생성하는 클래스를 나누어 생각할 수 있게 된다.
+
+<br/>
+
+##### Factory Method Pattern의 등장 인물
+클래스 다이어그램을 보면 상위 클래스(추상적인 뼈대, 프레임워크) 쪽에 있는 Creator와 Product의 관계가 하위 클래스(살을 붙인 구체적인 내용) 쪽에 있는 ConcreteCreator와 ConcreateProduct의 관계와 병행하고 있음을 알 수 있다.
+
+<br/>
+
+- Product(제품) 역
+    - 이것은 프레임워크 쪽이다.
+    - 이 패턴으로 생성되는 인스턴스가 가져야 할 인터페이스(API)를 결정하는 추상 클래스이다.
+    - 구체적인 내용은 하위 클래스 ConcreteProduct에서 결정한다.
+    - 예제 프로그램에서는 Doll 클래스가 이 역할을 맡았다.
+- Creator(작성자) 역
+    - 이것은 프레임워크 쪽으로, Product 역을 생성하는 추상 클래스이다.
+    - 구체적인 내용은 하위 클래스 ConcreteCreator가 결정한다.
+    - 예제 프로그램에서는 Factory 클래스가 이 역할을 맡았다.
+    - Creator 역은 실제로 생성할 ConcreteProduct 역에 대해서는 아는 바가 없다.
+        - Creator 역이 아는 것은 Product 역과 인스턴스 생성 메서드(factory Method)를 호출하면 Product가 생성된다는 것뿐이다.
+        - 예제 프로그램에서는 createProduct가 인스턴스를 생성하는 메서드이다.
+    - new를 사용해 실제 인스턴스를 생성하는 대신에, 인스턴스를 생성하는 메서드를 호출함으로써 구체적인 클래스 이름에 의한 속박에서 상위 클래스를 자유롭게 한다.
+- ConcreteProduct(구체적인 제품) 역
+    - 이것은 구체적으로 살을 붙이는 쪽으로, 구체적인 제품을 결정한다.
+    - 예제 프로그램에서는 TeddyBear 클래스가 이 역할을 맡았다.
+- ConcreteCreator(구체적인 작성자) 역
+    - 이것은 구체적으로 살을 붙이는 쪽으로, 구체적인 제품을 만들 클래스를 결정한다.
+    - 예제 프로그램에서는 TeddyBearFactory 클래스가 이 역할을 맡았다.
+
+<br/>
+
+##### Factory Method Pattern의 클래스 다이어그램
+![image](https://github.com/C0012S/PDA-JavaPattern/assets/66476874/385de816-e332-4f4c-aa09-dbccb6935cf9)
+
+<br/>
+
+Product 클래스는 프레임워크 쪽으로 factoryMethod에 의해 생성되는 객체의 인터페이스를 정의하는 추상 클래스이다.  
+구체적인 내용은 하위 클래스인 ConcreteProduct 클래스에서 구현한다.
+
+<br/>
+
+Creator 클래스는 프레임워크 쪽으로 Product 클래스를 생성하는 추상 클래스이다.  
+구체적인 내용은 하위 클래스인 ConcreteCreator 클래스에서 구현한다.
+
+<br/>
+
+ConcreteProduct 클래스는 구체적인 내용을 작성하는 쪽으로, Product 클래스를 상속받아 구체적인 객체를 생성한다.  
+여러 종류의 ConcreteProduct 클래스가 존재할 수 있으며 각각은 특정한 유형의 객체를 나타낸다.
+
+<br/>
+
+ConcreteCreator 클래스는 구체적인 내용을 작성하는 쪽으로, Creator 클래스를 상속받고 factoryMethod를 구체적으로 구현한다.  
+각 ConcreteCreator 클래스는 특정 유형의 객체를 생성하는 구체적인 로직을 구현한다.  
+따라서 여러 종류의 객체가 필요한 경우, 각각에 해당하는 ConcreteCreator 클래스를 만들 수 있다.
+
+<br/>
+
+##### Why Factory Method Pattern?
+- 수정에 닫혀있고 확장에는 열려있는 OCP 원칙을 지킬 수 있다.
+- Factory Method Pattern을 사용하면 구체적인 유형을 지정하지 않고 객체를 생성할 수 있어 코드의 유연성을 높이고 특정 클래스에 대한 의존도를 줄일 수 있다.
+- 객체를 생성하는 로직이 Factory 클래스 안으로 캡슐화되기 때문에 인스턴스를 관리할 수 있는 장소를 집중할 수 있다.
+
+<br/>
+
+#### Explain Example
+Factory Method Pattern을 사용한 예제 프로그램으로 곰인형(TeddyBear)을 만드는 공장 프로그램을 개발했다.  
+Doll 클래스와 Factory 클래스는 인스턴스를 생성하는 뼈대(프레임워크) 역할을 하며 Factory 패키지에 속해 있다.  
+TeddyBear 클래스와 TeddyBearFactory 클래스는 뼈대에 살을 붙여 구체적인 내용을 구현하는 역할을 하며 Doll 패키지에 속해 있다.
+
+<br/>
+
+즉, 패키지를 다음과 같이 정의할 수 있다.  
+- Factory 패키지    
+    : 인스턴스를 생성하는 프레임워크 쪽    
+- Doll 패키지    
+    : 구체적인 내용을 구현하는 쪽
+    
+<br/>
+
+##### 클래스 목록
+| 패키지 | 클래스 이름 | 설명 | 역할 |
+| --- | --- | --- | --- |
+| Factory | Doll | 추상 메서드 getName만 정의한 추상 클래스 | Product(제품) 역할 |
+| Factory | Factory | 메서드 create를 구현한 추상 클래스 | Creator(작성자) 역할 |
+| Doll | TeddyBear | 메서드 getName을 구현한 클래스 | ConcreteProduct(구체적인 제품) 역할 |
+| Doll | TeddyBearFactory | 메서드 createDoll, decorateDoll을 구현한 클래스 | ConcreteCreator(구체적인 작성자) 역할 |
+| Common | Main | 동작 테스트용 클래스 |  |
+
+<br/>
+
+##### 클래스 다이어그램
+![image](https://github.com/C0012S/PDA-JavaPattern/assets/66476874/8116d1b7-0453-43e8-86d6-87ab1d34e891)
+
+<br/>
+
+Doll 클래스와 Factory 클래스는 인스턴스를 생성하는 프레임워크 역할로, Factory 패키지에 속해 있는 추상 클래스이다. 
+
+<br/>
+
+TeddyBear 클래스는 Doll 클래스를 상속받아 구체적인 내용을 구현하며 TeddyBearFactory 클래스는 Factory 클래스를 상속받아 구체적인 내용을 구현한다.  
+이 둘은 구체적인 내용을 구현하므로 구체적인 내용을 구현하는 클래스로 구성되어 있는 Doll 패키지에 속해 있다.
+
+<br/>
+
+##### 코드
+- Doll.java
+
+```java
+package Factory;
+
+public abstract class Doll {
+	public abstract void getName();
+}
+```
+
+<br/>
+
+Factory 패키지의 Doll 클래스는 ‘제품’인 인형을 표현한 클래스이다.  
+해당 클래스에서는 추상 메서드 getName만 선언되어 있고, 구체적인 getName의 구현은 모두 Doll의 하위 클래스에게 맡기고 있다.
+
+<br/>
+
+이 프레임워크에서는 ‘이름이 있는(getName할 수 있는) 것’ 을 제품(인형)으로 규정한다.
+
+<br/>
+
+- Factory.java
+
+```java
+package Factory;
+
+public abstract class Factory {
+	protected abstract Doll createDoll(String animal, String dollName);
+	protected abstract void decorateDoll(Doll doll);
+	
+	public final Doll create(String animal, String dollName) {
+		Doll doll = createDoll(animal, dollName);
+		decorateDoll(doll);
+		return doll;
+	}
+}
+```
+
+<br/>
+
+Factory Method 패턴에서는 인스턴스를 생성할 때 Template Method 패턴을 사용하므로 Factory 패키지의 Factory 클래스에서는 Template Method 패턴이 사용된다.  
+추상 메서드 createDoll로 제품인 인형을 만들고, 만든 제품을 추상 메서드 decorateDoll로 꾸며 준다.  
+‘제품 만들기’ 와 ‘꾸며 주기’ 는 하위 클래스에서 구현한다.
+
+<br/>
+
+이 프레임워크에서 공장이란 ‘create 메서드로 Doll 인스턴스를 생성하는 것’ 으로 규정하고있다.  
+create 메서드는 createDoll로 제품을 만들고, decorateDoll로 꾸며 주는 절차로 구현되어 있다.
+
+<br/> 
+
+- TeddyBear.java
+
+```java
+package Doll;
+
+import Factory.Doll;
+
+public class TeddyBear extends Doll {
+	private String animal;
+	private String dollName;
+	
+	TeddyBear(String animal, String dollName) {
+		System.out.println(animal + "인형을 만듭니다.");
+		this.animal = animal;
+		this.dollName = dollName;
+	}
+
+	@Override
+	public void getName() {
+		System.out.println("이 " + animal + "인형의 이름은 " + dollName + "입니다.");
+	}
+
+	@Override
+	public String toString() {
+		return "[Doll : " + dollName + "]";
+	}
+}
+```
+
+<br/>
+
+구체적인 내용을 작성하는 Doll 패키지의 TeddyBear 클래스이다.  
+프레임워크에서 분리되는 것임을 명시하기 위해 Doll 패키지라는 별도의 패키지를 만들고, TeddyBear 클래스를 Doll 클래스의 하위 클래스로서 정의한다.
+
+<br/>
+
+- TeddyBearFactory.java
+
+```java
+package Doll;
+
+import Factory.Doll;
+import Factory.Factory;
+
+public class TeddyBearFactory extends Factory {
+	@Override
+	protected Doll createDoll(String animal, String dollName) {
+		return new TeddyBear(animal, dollName);
+	}
+
+	@Override
+	protected void decorateDoll(Doll doll) {
+		System.out.println(doll + "을 예쁘게 꾸며 줍니다.");
+	}
+}
+```
+
+<br/>
+
+TeddyBearFactory 클래스에서는 createDoll 메서드와 decorateDoll 메서드를 구현한다.  
+createDoll 메서드는 TeddyBear 인스턴스를 생성하여 실제로 제품인 인형을 만들고, decorateDoll은 만들어진 제품을 꾸며 준다.
+
+<br/>
+
+- Main.java
+
+```java
+package Common;
+
+import Factory.Factory;
+import Factory.Doll;
+import Doll.TeddyBearFactory;
+
+public class Main {
+	public static void main(String[] args) {
+		Factory teddyBearFactory = new TeddyBearFactory();
+		
+		Doll bearTeddy = teddyBearFactory.create("Bear", "Teddy");
+		bearTeddy.getName();
+		
+		System.out.println();
+		
+		Doll bearLebby = teddyBearFactory.create("Bear", "Lebby");		
+		bearLebby.getName();
+	}
+}
+```
+
+<br/>
+
+Main 클래스에서는 Factory 패키지와 Doll 패키지를 이용하여 실제로 TeddyBear를 만들고, 만들어진 인형의 이름을 확인할 수 있도록 코드를 작성했다.
+
+<br/>
+
+### 실행 결과
+<img width="300" alt="image" src="https://github.com/C0012S/PDA-JavaPattern/assets/66476874/fe9909d6-f55e-4828-838a-8897857c50a3">
+
+<br/>
+<br/>
+<br/>
+
 ## Commit Message Convention
 - ➕ [ADD] : 파일이나 부수적인 코드 추가
 - ✅ [MOD] : 코드 및 내부 파일 수정
