@@ -251,6 +251,7 @@ public class SellOrder extends AbstractOrder {
 }
 ```
 
+StockTradingSystem 클래스: 이 클래스는 실제 주식 매매 시스템을 시뮬레이션하는 예제를 제공합니다. 매수 주문과 매도 주문을 생성하고 executeOrder()를 호출하여 주문 처리 프로세스를 실행합니다.
 ```java
 // 주식 매매 시스템에서 사용 예제
 public class StockTradingSystem {
@@ -265,7 +266,6 @@ public class StockTradingSystem {
     }
 }
 ```
-+ StockTradingSystem 클래스: 이 클래스는 실제 주식 매매 시스템을 시뮬레이션하는 예제를 제공합니다. 매수 주문과 매도 주문을 생성하고 executeOrder()를 호출하여 주문 처리 프로세스를 실행합니다.
  
 Template Method 패턴을 사용하여 매수 주문과 매도 주문에서 공통된 주문 처리 프로세스를 추상 클래스에 정의하고, 각각의 구체적인 동작을 하위 클래스에서 구현할 수 했습니다. 이렇게 하면 코드의 재사용성을 높이고, 확장 가능한 주문 처리 시스템을 만들 수 있습니다.
 
