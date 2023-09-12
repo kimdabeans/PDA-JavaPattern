@@ -1,9 +1,9 @@
 # Design Pattern Assignment
 ## Contents
-[Design Pattern](#Design-Pattern)
-[Strategy Pattern](#Strategy-Pattern-Example)
-[Moreover… Strategy Pattern With Enum](#Moreover…-Strategy-Pattern-With-Enum)
-[Template Method Pattern](#Template-Method-Pattern-Example)
+[Design Pattern](#Design-Pattern)  
+[Strategy Pattern](#Strategy-Pattern-Example)  
+[Moreover… Strategy Pattern With Enum](#Moreover…-Strategy-Pattern-With-Enum)  
+[Template Method Pattern](#Template-Method-Pattern-Example)  
 [Factory Method Pattern](#Factory-Method-Pattern-Example)
 
 <br/>
