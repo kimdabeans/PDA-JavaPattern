@@ -1,7 +1,7 @@
 package strategy_pattern.example1.after;
 
 /**
- * 이 클래스는 주어진 매매 전략을 사용하여 매매를 실행하는 데 사용됩니다.
+ * 해당 클래스는 주어진 매매 전략을 사용하여 매매를 실행하는 데 사용됩니다.
  */
 public class TradingSystem {
     private TradingStrategy strategy;
