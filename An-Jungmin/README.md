@@ -1,8 +1,10 @@
+# 디자인 패턴 
+
 - [Strategy Pattern](#strategy-pattern)
 - [Observer Pattern](#observer-pattern)
 - [Factory Method Pattern](#factory-method-pattern)
 
-# Strategy Pattern
+## Strategy Pattern
 
 ### 실행 중에 알고리즘 전략을 선택하여 객체의 동작을 실시간으로 바뀌도록 할 수 있게 하는 행위 디자인 패턴.
 
@@ -115,7 +117,7 @@ eat 행동을 cat 클래스에서 정의한 메소드를 써서 구현하지 않
 
 
 ---
-# Observer Pattern
+## Observer Pattern
 
 객체들간의 일대다 의존 관계를 만들어 하나의 객체가 변하면 이 객체에 의존하는 객체들이 모두 알림을 받고 자동으로 업데이트 되는 방식으로 일대다 의존성을 정의하는 디자인 패턴.
 
@@ -252,7 +254,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
 ---
 
-# Factory Method Pattern
+## Factory Method Pattern
 
 인스턴스 생성을 하위클래스에 위임하여 유연하고 확장 가능한 구조를 구현하는 것.
 
