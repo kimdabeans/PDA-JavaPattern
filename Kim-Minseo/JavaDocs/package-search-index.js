@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"factoryMethod"},{"l":"proxy"},{"l":"singleton"},{"l":"templateMethod.after"},{"l":"templateMethod.before"}];updateSearchResults();

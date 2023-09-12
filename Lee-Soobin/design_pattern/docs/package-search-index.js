@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"factory.framework"},{"l":"factory.idcard"},{"l":"singleton"},{"l":"template_method"}]

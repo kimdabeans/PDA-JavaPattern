@@ -1,0 +1,9 @@
+commandPattern1
+commandPattern1.account
+commandPattern1.command
+commandPattern2
+commandPattern2.account
+commandPattern2.command
+factoryPattern
+proxyPattern
+strategyPattern
