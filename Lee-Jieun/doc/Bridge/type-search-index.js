@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"printer","l":"BlackWhitePrinter"},{"p":"publication","l":"Book"},{"p":"printer","l":"ColorPrinter"},{"p":"publication","l":"Magazine"},{"p":"<Unnamed>","l":"Main"},{"p":"printer","l":"Printer"},{"p":"publication","l":"Publication"}];updateSearchResults();
