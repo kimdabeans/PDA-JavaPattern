@@ -38,7 +38,6 @@ _Plus_ 동기화(Synchronization)를 고려해야 하는 이유
 [Javadocs](docs/SingletonPattern/SingletonPatternDocumentation.html)
 
 ## State Pattern
-
 #### Example01. 안전 관리 시스템
 <img src="../../../Na-Younghyun/img/state01.png" alt="ticketFactory" width="70%" height="70%"> 
 
