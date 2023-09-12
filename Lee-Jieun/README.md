@@ -3,14 +3,14 @@
 Pro Digital Academy Design Pattern 설계 과제 <br><br>
 
 ## 📃 Contents
-### [0. Design Pattern이란?](#0-design-pattern)
-### [1. Bridge Pattern](#1-bridge-pattern)
-### [2. Adapter Pattern](#2-adapter-pattern)
-### [3. Strategy Pattern](#3-strategy-pattern)
+### [0 Design Pattern이란?](#0-design-pattern)
+### [1 Bridge Pattern](#1-bridge-pattern)
+### [2 Adapter Pattern](#2-adapter-pattern)
+### [3 Strategy Pattern](#3-strategy-pattern)
 
 <br><br>
 
-## 0. Design Pattern
+## 0 Design Pattern
 
 > 소프트웨어 디자인에서 자주 발생하는 문제를 해결하기 위한 공통된 설계 방법입니다.
 디자인 패턴은 코드를 더 구조화하고 재사용 가능하며, 다른 개발자와 협업하기 쉽도록 도와줍니다.
@@ -30,7 +30,7 @@ Pro Digital Academy Design Pattern 설계 과제 <br><br>
 💡 &nbsp; Design Pattern은 공통된 문제를 해결하기 위한 가이드라인을 제공하지만, 모든 상황에 항상 적용해야 하는 것은 아니기 때문에, 상황과 요구 사항에 따라 적절한 패턴을 선택하고 적용해야합니다! 
 <br><br><br>
 
-## 1. Bridge Pattern
+## 1 Bridge Pattern
 
 ### Bridge Pattern이란?
 > 추상화와 구현을 분리하여 각각을 독립적으로 확장할 수 있게하는 구조적 디자인 패턴입니다. 분리된 두 계층을 연결하는 다리(Bridge)를 통해 연결됩니다.
@@ -117,7 +117,7 @@ public class Main {
 
 <br>
 
-## 2. Adapter Pattern
+## 2 Adapter Pattern
 
 ### Adapter Pattern이란?
 > 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들을 함께 작동해주도록 변환 역할을 해주는 구조적 디자인 패턴입니다.
@@ -296,7 +296,7 @@ public class Main {
 
 <br><br>
 
-## 3. Strategy Pattern
+## 3 Strategy Pattern
 
 ### Strategy Pattern이란?
 > 실행(런타임) 중에 알고리즘 전략을 선택하여 객체 동작을 실시간으로 바뀌도록 할 수 있게하는 디자인 패턴입니다.
