@@ -65,15 +65,15 @@ Builder Pattern의 또다른 형태인
 
 - 기존의 Builder Pattern에서 내가 원하는 객체의 내용을 받아 원하는 형식으로 Print하는 Buider 패턴을 구현
 
-|  | 전 | 후 |
+
+|  | uml | 출력 내용 입력 방법  |
 | --- | --- | --- |
-|  | <img src=”./Builder1.drawio.png”> | <img src="./Builder2.drawio.png"> |
-| class 추가 생성 방법  | Calss 생성 후, Enum을 수정한다.  | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
+| 전 | <img src=”./Builder1.drawio.png”> | 직접 String을 생성하고, 넣어준다.  |
+| 후 | <img src="./Builder2.drawio.png"> | coffeeRecipe 를 생성 한 후, 해당 레시피를 출력한다.  |
 
 ### 변화 ❤️
 
 - coffeeRecipe 클래스 생성
-    - 
     
     ```java
     public class coffeeRecipe {
@@ -91,10 +91,35 @@ Builder Pattern의 또다른 형태인
             this.water = coffeeBuilder.water;
             this.sugar = coffeeBuilder.sugar;
         }
+    
+    public static class coffeeBuilder {
+            // 필수 매개 변수
+            private final boolean alcol;
+            // 선택 매개변수
+            private int size = 0;
+            private int milk = 0;
+            private int espresso = 0;
+            private int water = 0;
+            private int sugar = 0;
+    
+            /**
+             * 커피의 알콜 유무를 설정하는 coffeeBuilder 클래스의 생성자입니다.
+             *
+             * @param alcol 커피의 알콜 유무 (true 또는 false)
+             */
+            public coffeeBuilder(boolean alcol) {
+                this.alcol = alcol;
+            }
     ```
     
+    |  | uml | 출력 내용 입력 방법  |
+    | --- | --- | --- |
+    | 전 | <img src=”./Builder1.drawio.png”> | 직접 String을 생성하고, 넣어준다.  |
+    | 후 | <img src="./Builder2.drawio.png"> | coffeeRecipe 를 생성 한 후, 해당 레시피를 출력한다.  |
 
-해당 클래스는 내부 클래스를 가집니다. 
+coffeeRecipe 는 coffeeBuilder클래스를 내부 클래스 가집니다. 
+
+이 클래스는 빌더 패턴을 사용하여 객체를 생성하므로, 객체를 생성할 때 다양한 속성을 설정할 수 있고, 가독성이 좋아지며, 객체의 불변성을 보장하고있습니다. 이를 통해 다양한 커피 레시피를 만들 수 있으며, 필요한 정보만 설정할 수 있습니다.
 
 ### 정리  🐾
 
@@ -164,9 +189,8 @@ Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle)
 
 |  | uml | class 추가 생성 방법  |
 | --- | --- | --- |
-| 전 | <img src=”./Builder1.drawio.png”> | Calss 생성 후, Enum을 수정한다. 
- |
-| 후 | <img src="./Builder2.drawio.png"> | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
+| 전 | <img src=”./FactoryPattern1.drawio.png”> | Calss 생성 후, Enum을 수정한다.  |
+| 후 | <img src=”./FactoryPattern.png”> | 클래스를 추가한 후, DynamicVehicleFactory에 registerVehicle 함수를 통해 Factory에 등록한다.  |
 
 이전, 후 공통적으로 Vehicle interface를 상속받아 vehicle의 종류들을 직접적으로 구현하면서 구현부와 정의부를 나눴습니다. 이는 템플릿을 통해 상위클래스만 보고도 하위 클래스가 어떻게 처리되는 지 알 수 있다는 장점을 습니다. 
 
