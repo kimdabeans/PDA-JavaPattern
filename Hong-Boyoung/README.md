@@ -12,5 +12,6 @@
    - State 패턴은 객체의 상태에 따라 동작을 변경하는 데 사용됩니다. 객체가 내부 상태에 따라 다른 행동을 취하도록 하는 데 유용한 패턴입니다.
 
 해당 과제에 대한 내용은 아래 링크를 통해 확인하시면 됩니다.
-[Java Design Pattern 기술 문서](https://sand-fox-add.notion.site/Java-Design-Pattern-4cd486ed66b145fdb49e240b52a24449?pvs=4)
+
+[Java Design Pattern 정리 문서](https://sand-fox-add.notion.site/Java-Design-Pattern-4cd486ed66b145fdb49e240b52a24449?pvs=4)
 
