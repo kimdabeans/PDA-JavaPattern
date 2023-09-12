@@ -148,7 +148,7 @@ public class SellOrder {
 ### 2. Template Method Pattern을 적용한 코드 : After
 
 #### 클래스 다이어그램
-<img src="https://github.com/eunsiver/shinhan-Design-Oattern/assets/76419984/7069c0f2-43f9-4643-b0eb-5b003aefdb90)" width=600>
+<img src="https://github.com/eunsiver/shinhan-Design-Oattern/assets/76419984/7069c0f2-43f9-4643-b0eb-5b003aefdb90" width=600>
 
 #### 코드
 
