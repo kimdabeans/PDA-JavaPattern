@@ -13,13 +13,32 @@
 InefficientTrafficLight.java
 
 ```java
+/**
+ * 비효율적인 방식으로 구현된 신호등 클래스입니다.
+ * 이 클래스는 각 신호등 상태를 정수 상수로 표현하고, 상태 전환에 대한 조건문을 사용하여 동작합니다.
+ */
 public class InefficientTrafficLight {
+    /**
+     * 빨간 불 상태를 나타내는 정수 상수입니다.
+     */
     public static final int RED = 0;
+
+    /**
+     * 초록 불 상태를 나타내는 정수 상수입니다.
+     */
     public static final int GREEN = 1;
+
+    /**
+     * 노란 불 상태를 나타내는 정수 상수입니다.
+     */
     public static final int YELLOW = 2;
 
     private int currentState = RED;
 
+    /**
+     * 현재 신호등 상태를 변경합니다. 빨간 불에서 초록 불, 초록 불에서 노란 불,
+     * 노란 불에서 다시 빨간 불로 상태를 변경하며 각 상태에서 특정 동작을 수행합니다.
+     */
     public void change() {
         if (currentState == RED) {
             System.out.println("빨간 불 - 정지");
@@ -39,6 +58,12 @@ public class InefficientTrafficLight {
         }
     }
 
+    /**
+     * 주 애플리케이션 진입점입니다. 이 메소드에서는 {@link InefficientTrafficLight} 객체를 생성하고,
+     * 상태 변경을 여러 번 반복하여 신호등 동작을 시뮬레이션합니다.
+     *
+     * @param args 명령행 인수 (사용하지 않음)
+     */
     public static void main(String[] args) {
         InefficientTrafficLight trafficLight = new InefficientTrafficLight();
 
@@ -48,34 +73,15 @@ public class InefficientTrafficLight {
         }
     }
 }
-```
 
-Main.java
-
-```java
-/**
- * 이 클래스는 주문을 처리하는 데 사용되는 식당 객체를 나타냅니다.
- */
-public class MainWithoutProxy {
-    /**
-     * 주문 처리를 위한 메인 메소드입니다.
-     */
-    public static void main(String[] args) {
-        // 식당 객체 생성
-        RestaurantWithoutProxy restaurant = new RestaurantWithoutProxy();
-        
-        // 고객의 이름 설정
-        restaurant.setCustomerName("Jinny");
-        System.out.println("현재 주문자 이름: " + restaurant.getCustomerName());
-        
-        // 주문 처리
-        restaurant.placeOrder("피자");
-    }
-}
 ```
 
 위에 코드는 State 패턴을 적용하지 않은 프로그램입니다. <br>
+
 이 프로그램의 관련 문서인 Javadoc은 **StateBefore/docs** 폴더에 있습니다.<br> 
+| 클래스명 | 링크                                        |
+| --------- | ---------------------------------------- |
+| InefficientTrafficLight Class | [InefficientTrafficLight Class](./StateBefore/docs/InefficientTrafficLight.html) |
 
 이 프로그램은 아래와 같이 여러가지 비효율적인 부분들이 있습니다.
 
@@ -95,8 +101,14 @@ public class MainWithoutProxy {
 TrafficLightState.java
 
 ```java
-// 상태 패턴에서 사용할 상태 인터페이스
+/**
+ * 신호등 상태를 나타내는 인터페이스입니다.
+ */
 public interface TrafficLightState {
+    /**
+     * 현재 상태에서의 동작을 처리합니다.
+     * @param context 동작을 수행하는 신호등 컨텍스트
+     */
     void handle(TrafficLightContext context);
 }
 ```
@@ -104,19 +116,30 @@ public interface TrafficLightState {
 TrafficLightContext.java
 
 ```java
-// 신호등 컨텍스트 클래스
+/**
+ * 신호등 컨텍스트 클래스입니다.
+ */
 public class TrafficLightContext {
     private TrafficLightState state;
 
+    /**
+     * TrafficLightContext 클래스의 생성자입니다. 초기 상태를 빨간 불로 설정합니다.
+     */
     public TrafficLightContext() {
-        // 초기 상태를 빨간 불로 설정
         state = new RedLightState();
     }
 
+    /**
+     * 현재 상태를 변경합니다.
+     * @param state 새로운 상태
+     */
     public void setState(TrafficLightState state) {
         this.state = state;
     }
 
+    /**
+     * 현재 상태에서의 동작을 처리합니다.
+     */
     public void change() {
         // 상태 변경 메소드
         state.handle(this);
@@ -127,8 +150,17 @@ public class TrafficLightContext {
 RedLightState.java
 
 ```java
-// 빨간 불 상태 클래스
+/**
+ * 빨간 불 상태 클래스입니다. 이 클래스는 {@link TrafficLightState} 인터페이스를 구현합니다.
+ * 빨간 불 상태에서는 신호등이 "정지" 신호를 나타내며, 어떤 동작을 수행하고 일정 시간이 지난 후 다음 상태로 전환될 수 있습니다.
+ */
 public class RedLightState implements TrafficLightState {
+    /**
+     * 현재 상태에서의 동작을 처리합니다. 이 메소드는 "빨간 불 - 정지" 메시지를 출력하고,
+     * 일정 시간이 지난 후 다음 상태로 전환되도록 {@link TrafficLightContext}에게 요청합니다.
+     *
+     * @param context 현재 상태를 관리하는 {@link TrafficLightContext} 객체
+     */
     @Override
     public void handle(TrafficLightContext context) {
         System.out.println("빨간 불 - 정지");
@@ -137,13 +169,23 @@ public class RedLightState implements TrafficLightState {
         context.setState(new GreenLightState());
     }
 }
+
 ```
 
 YellowLightState.java
 
 ```java
-// 노란 불 상태 클래스
+/**
+ * 노란 불 상태 클래스입니다. 이 클래스는 {@link TrafficLightState} 인터페이스를 구현합니다.
+ * 노란 불 상태에서는 신호등이 "경고" 신호를 나타내며, 어떤 동작을 수행하고 일정 시간이 지난 후 다음 상태로 전환될 수 있습니다.
+ */
 public class YellowLightState implements TrafficLightState {
+    /**
+     * 현재 상태에서의 동작을 처리합니다. 이 메소드는 "노란 불 - 경고" 메시지를 출력하고,
+     * 일정 시간이 지난 후 다음 상태로 전환되도록 {@link TrafficLightContext}에게 요청합니다.
+     *
+     * @param context 현재 상태를 관리하는 {@link TrafficLightContext} 객체
+     */
     @Override
     public void handle(TrafficLightContext context) {
         System.out.println("노란 불 - 경고");
@@ -157,8 +199,17 @@ public class YellowLightState implements TrafficLightState {
 GreenLightState.java
 
 ```java
-// 초록 불 상태 클래스
+/**
+ * 초록 불 상태 클래스입니다. 이 클래스는 {@link TrafficLightState} 인터페이스를 구현합니다.
+ * 초록 불 상태에서는 신호등이 "진행" 신호를 나타내며, 어떤 동작을 수행하고 일정 시간이 지난 후 다음 상태로 전환될 수 있습니다.
+ */
 public class GreenLightState implements TrafficLightState {
+    /**
+     * 현재 상태에서의 동작을 처리합니다. 이 메소드는 "초록 불 - 진행" 메시지를 출력하고,
+     * 일정 시간이 지난 후 다음 상태로 전환되도록 {@link TrafficLightContext}에게 요청합니다.
+     *
+     * @param context 현재 상태를 관리하는 {@link TrafficLightContext} 객체
+     */
     @Override
     public void handle(TrafficLightContext context) {
         System.out.println("초록 불 - 진행");
@@ -172,8 +223,18 @@ public class GreenLightState implements TrafficLightState {
 Main.java
 
 ```java
+/**
+ * 주 애플리케이션 클래스입니다. 이 클래스는 신호등 동작 시뮬레이션을 수행합니다.
+ */
 public class Main {
+    /**
+     * 주 애플리케이션 진입점입니다. 이 메소드에서는 {@link TrafficLightContext} 객체를 생성하고,
+     * 상태 변경을 여러 번 반복하여 신호등 동작을 시뮬레이션합니다.
+     *
+     * @param args 명령행 인수 (사용하지 않음)
+     */
     public static void main(String[] args) {
+        // TrafficLightContext 객체 생성
         TrafficLightContext trafficLight = new TrafficLightContext();
 
         // 상태 변경을 여러 번 반복하여 신호등 동작 시뮬레이션
@@ -200,12 +261,21 @@ public class Main {
 
 1. **TrafficLight (상태를 가지고 있는 컨텍스트 클래스):** **`TrafficLight`** 클래스는 상태 패턴의 컨텍스트 역할을 합니다. 이 클래스는 현재 상태를 관리하고, 상태에 따라 동작을 수행합니다. **`state`** 필드는 현재 상태를 저장하며, **`setState()`** 메소드를 통해 상태를 변경하고, **`change()`** 메소드는 상태에 따른 동작을 수행합니다.
 2. **TrafficLightState (상태 인터페이스):** **`TrafficLightState`** 인터페이스는 모든 상태 클래스가 구현해야 하는 인터페이스입니다. **`handle()`** 메소드는 각 상태에서 수행할 동작을 정의합니다.
-3. **RedLightState, GreenLightState, YellowLightState (구체적인 상태 클래스):** 각각의 상태 클래스는 **`TrafficLightState`** 인터페이스를 구현합니다. 각 상태 클래스는 **`handle()`** 메소드에서 해당 상태에서의 동작을 정의합니다. 예를 들어, **`RedLightState`**에서는 "빨간 불 - 정지" 동작을, **`GreenLightState`**에서는 "초록 불 - 진행" 동작을 정의합니다.
+3. **RedLightState, GreenLightState, YellowLightState (구체적인 상태 클래스):** 각각의 상태 클래스는 **`TrafficLightState`** 인터페이스를 구현합니다. 각 상태 클래스는 **`handle()`** 메소드에서 해당 상태에서의 동작을 정의합니다. 예를 들어, **`RedLightState`** 에서는 "빨간 불 - 정지" 동작을, **`GreenLightState`** 에서는 "초록 불 - 진행" 동작을 정의합니다.
 
 상태 패턴을 표현하고 있는 이 구조에서는, 컨텍스트 객체가 현재 상태를 관리하고, 각 상태 객체가 해당 상태에서의 동작을 구현함을 보여주고 있습니다. 상태 패턴은 객체의 상태에 따른 동작을 캡슐화하여 코드를 유지 보수하고 확장하기 쉽게 만들 수 있습니다.
 
 # Javadoc <br>
 javadoc 파일은 **StateAfter/docs** 폴더에 있습니다.<br>
+| 클래스명 | 링크                                        |
+| --------- | ---------------------------------------- |
+| TrafficLight Class | [TrafficLight Class](./StateAfter/docs/TrafficLight.html) |
+| TrafficLightState Class | [TrafficLightState Class](./StateAfter/docs/TrafficLightState.html) |
+| RedLightState Class | [RedLightState Class](./StateAfter/docs/RedLightState.html) |
+| RedLightState Class | [RedLightState Class](./StateAfter/docs/RedLightState.html) |
+| GreenLightState Class | [GreenLightState Class](./StateAfter/docs/GreenLightState.html) |
+| YellowLightState Class | [YellowLightState Class](./StateAfter/docs/YellowLightState.html) |
+
 
 # 결론
 
