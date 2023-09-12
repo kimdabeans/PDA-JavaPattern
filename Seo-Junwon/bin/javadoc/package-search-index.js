@@ -1,0 +1,1 @@
+packageSearchIndex = [{"m":"design_pattern","l":"abstract_factory_pattern"},{"l":"All Packages","u":"allpackages-index.html"},{"m":"design_pattern","l":"factory_pattern"},{"m":"design_pattern","l":"singleton_pattern"}];updateSearchResults();

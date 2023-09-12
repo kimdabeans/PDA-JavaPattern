@@ -1,0 +1,11 @@
+com.example.practice
+com.example.practice.builderPattern.gof
+com.example.practice.builderPattern.simple
+com.example.practice.singleton
+com.example.practice.singleton.simple
+com.example.practice.singleton.spring
+com.example.practice.singleton.spring.domain
+com.example.practice.singleton.spring.repository
+com.example.practice.singleton.spring.service
+com.example.practice.state.legacy
+com.example.practice.state.refactor

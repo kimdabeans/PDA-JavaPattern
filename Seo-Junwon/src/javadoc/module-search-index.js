@@ -1,0 +1,1 @@
+moduleSearchIndex = [{"l":"design_pattern"}];updateSearchResults();

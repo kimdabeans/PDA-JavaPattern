@@ -1,6 +1,6 @@
 # Compiled class file
 *.class
-
+.DS_Store
 # Log file
 *.log
 
@@ -12,7 +12,8 @@
 
 # IntelliJ IDEA
 */.idea/
-
+.idea/
+*/.idea
 # Package Files #
 *.jar
 *.war
