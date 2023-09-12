@@ -15,7 +15,7 @@ public abstract class Cat {
     }
 
     /**
-     * 고양이의 외모를 나타내는 추상 메서드입니다.
+     * 고양이를 나타내는 메소드입니다.
      */
     public abstract void display();
 
@@ -28,7 +28,6 @@ public abstract class Cat {
 
     /**
      * 고양이의 울음 소리를 나타내는 메서드입니다.
-     * 모든 고양이는 "야옹~"이라고 울음 소니다.
      */
     public void meow() {
         System.out.println("모든 고양이는 야옹~");

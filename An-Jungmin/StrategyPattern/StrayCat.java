@@ -13,7 +13,7 @@ public class StrayCat extends Cat {
     }
 
     /**
-     * 길고양이의 외모를 나타내는 메서드입니다.
+     * 길고양이를 나타냅니다.
      */
     @Override
     public void display() {

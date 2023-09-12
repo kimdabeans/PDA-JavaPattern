@@ -5,10 +5,6 @@ package StrategyPattern;
  */
 public class CatMain {
 
-    /**
-     * 프로그램의 진입점입니다.
-     * @param args 명령줄 인수 (사용하지 않음)
-     */
     public static void main(String[] args) {
         // 먹을 수 있는 고양이 생성
         Cat strayCat = new StrayCat();
