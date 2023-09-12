@@ -12,7 +12,7 @@
 
 다음으로 디자인 패턴 중 가장 널리 쓰이는 패턴인 SingleTon Pattern에 대해 공부하며 싱글톤 패턴을 구현하는 방법에 여러 가지가 있음을 알 수 있었다. 따라서 이번 과제를 통해 각 방법은 어떠한 차이가 있고 장단점이 무엇인지에 대해 학습해보며 정리하였다. 
 
-Readme에 첨부한 코드들은 간략한 설명만 포함되어 있으며, javadoc은 Git에 첨부한 코드를 통해 확인하실 수 있습니다. 
+Readme에 첨부한 코드들은 간략한 설명만 포함되어 있으며, javadoc은 Git에 첨부한 코드들 혹은 [링크](https://github.com/wnsdnjs70/PDA-JavaPattern/blob/Seo-Junwon/Seo-Junwon/src/javadoc/allpackages-index.html)를 통해 확인하실 수 있습니다. 
 
 ## 0. Simple Factory Pattern
 
