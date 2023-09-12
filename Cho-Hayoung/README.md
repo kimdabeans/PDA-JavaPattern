@@ -65,12 +65,6 @@ Builder Pattern의 또다른 형태인
 
 - 기존의 Builder Pattern에서 내가 원하는 객체의 내용을 받아 원하는 형식으로 Print하는 Buider 패턴을 구현
 
-
-|  | uml | 출력 내용 입력 방법  |
-| --- | --- | --- |
-| 전 | <img src="./Builder1.drawio.png"> | 직접 String을 생성하고, 넣어준다.  |
-| 후 | <img src="./Builder2.drawio.png"> | coffeeRecipe 를 생성 한 후, 해당 레시피를 출력한다.  |
-
 ### 변화 ❤️
 
 - coffeeRecipe 클래스 생성
@@ -151,8 +145,8 @@ Builder Pattern을 조합하여 얻은 장점은 다음과 같습니다.
 ### 코드 소개👻
 
 Factory Method 패턴을 사용하여 다양한 유형의 교통 수단(Vehicle) 객체를 생성하고 사용하는 예제. 입니다. Factory Method 패턴이란, 객체 생성을 캡슐화하고 서브클래스에서 객체 생성 방법을 결정하는 디자인 패턴입니다.
-
-- <img src="./FactoryPattern.png">
+- uml
+<img src="./FactoryPattern.png">
 
 핵심 요소는 다음과 같습니다. 
 
