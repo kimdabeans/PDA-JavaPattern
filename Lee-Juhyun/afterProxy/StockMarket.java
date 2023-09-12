@@ -1,8 +1,16 @@
 package afterProxy;
 
+/**
+ * 주식 거래를 처리하는 클래스입니다.
+ */
 public class StockMarket implements ITrading {
 	private String stock;
-	
+
+	/**
+	 * StockMarket 클래스 생성자입니다.
+	 *
+	 * @param type 거래할 주식의 종류
+	 */
 	StockMarket(String type){
 		stockTrading(type);
 	}
