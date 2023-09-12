@@ -5,6 +5,7 @@ import framework.Product;
 
 /**
  * 아이스크림 제품을 생성하는 구체적인 팩토리 클래스입니다.
+ * 이 클래스는 {@link Factory} 클래스를 상속하여 아이스크림 제품을 생성하고 등록하는 메서드를 제공합니다.
  */
 public class IceCreamFactory extends Factory {
     /**
