@@ -40,7 +40,7 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 된장찌개와, 김치찌개를 끓일 때 공통적으로 해야하는 단계도 있고 다른 재료를 넣어야하는 단계도 있을 것이다.
 
 
-#### 먼저 TemplateMethod 패턴을 적용하지 않았을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/beforeTemplateMethod) 
+#### 먼저 TemplateMethod 패턴을 적용하지 않았을 때 : [전체 코드](beforeTemplateMethod) 
 ##### 만드는 법을 비교해보자.
 |된장찌개|김치찌개|
 |:---:|:---:|
@@ -55,7 +55,7 @@ TemplateMethod 패턴은 어떤 작업을 처리하는 일부분을 **서브 클
 
 *이때 TemplateMethod 패턴을 사용한다.*
 
-#### TemplateMethod 패턴을 적용했을 때 : [전체 코드](https://github.com/JZU0/Java-design-patterns/tree/main/Lee-Juhyun/afterTemplateMethod) 
+#### TemplateMethod 패턴을 적용했을 때 : [전체 코드](afterTemplateMethod) 
 ##### 만드는 법을 비교해보자.
 |                   공통된 단계                    |
 |:-------------------------------------------:|
