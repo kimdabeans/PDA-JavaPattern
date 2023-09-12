@@ -12,13 +12,13 @@ public class ShinRamenBefore {
 	 * 생성자 
 	 */
 	public ShinRamenBefore() {
+		System.out.println("---------------------");
 		name = "신라면";
 	}
 	/**
 	 * 라면을 포장하는 메서드 
 	 */
 	public void packaging() {
-		System.out.println("---------------------");
 		System.out.println(name + "을 포장");
 	}
 	/**

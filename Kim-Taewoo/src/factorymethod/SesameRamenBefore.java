@@ -12,13 +12,13 @@ public class SesameRamenBefore {
 	 * 생성자 
 	 */
 	public SesameRamenBefore() {
+		System.out.println("---------------------");
 		name = "참깨라면";
 	}
 	/**
 	 * 라면을 포장하는 메서드 
 	 */
 	public void packaging() {
-		System.out.println("---------------------");
 		System.out.println(name + "을 포장");
 	}
 	/**
