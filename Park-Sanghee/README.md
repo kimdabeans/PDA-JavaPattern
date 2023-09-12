@@ -10,3 +10,5 @@
 - 🔁 [RENAME] : 파일 이름 변경
 - 🔀 [MERGE] : 다른 브랜치와의 충돌 해결 후 Merge
 - ♻️ [REFACTOR] : 전면 수정
+- 📝 [COMMENT]: 주석 추가 및 업데이트
+- 📚 [JAVADOC]: JavaDoc 추가 및 업데이트
