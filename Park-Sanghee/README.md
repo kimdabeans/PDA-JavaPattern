@@ -491,6 +491,288 @@ public class Main {
 이로써 새로운 페이지 교체 알고리즘을 추가하거나 기존 알고리즘을 변경하는 작업이 더 효율적으로 수행된다.
 
 <br/>
+
+### Template Method Pattern Example
+#### Template Method Pattern?
+Template Method Pattern은 템플릿 기능을 가진 패턴이다.  
+상위 클래스 쪽에 템플릿이 될 메서드가 정의되어 있고, 그 메서드 정의에 추상 메서드가 사용된다.  
+따라서 상위 클래스의 코드만 봐서는 최종적으로 어떻게 처리되는지 알 수 없다.  
+상위 클래스로 알 수 있는 것은 추상 메서드를 호출하는 방법뿐이다.
+
+<br/>
+
+추상 메서드를 실제로 구현하는 것은 하위 클래스이다.  
+하위 클래스에서 메서드를 구현하면 구체적인 처리 방식이 정해진다.  
+다른 하위 클래스에서 구현을 다르게 하면 처리도 다르게 이루어진다.  
+그러나 어느 하위 클래스에서 어떻게 구현하더라도 처리의 큰 흐름은 상위 클래스에서 구성한 대로 된다.  
+
+<br/>
+
+이처럼 상위 클래스에서 처리의 뼈대를 결정하고 하위 클래스에서 그 구체적 내용을 결정하는 디자인 패턴을 Template Method 패턴이라고 부른다.
+
+<br/>
+
+##### Template Method Pattern의 등장 인물
+- AbstractClass(추상 클래스) 역
+    - 템플릿 메서드를 구현하며 그 템플릿 메서드에서 사용할 추상 메서드를 선언한다.
+        - 이 추상 메서드는 하위 클래스인 ConcreteClass에서 구현된다.
+    - 예제 프로그램에서는 DollProcess 클래스가 이 역할을 맡았다.
+- ConcreteClass(구현 클래스) 역
+    - AbstractClass 역에서 정의된 추상 메서드를 구체적으로 구현한다.
+        - 여기서 구현하는 메서드는 AbstractClass의 템플릿 메서드에서 호출된다.
+    - 예제 프로그램에서는 RabbitDollProcess 클래스와 CatDollProcess 클래스가 이 역할을 맡았다.
+
+<br/>
+
+##### Template Method Pattern의 클래스 다이어그램
+![image](https://github.com/C0012S/PDA-JavaPattern/assets/66476874/40f750b7-64c8-477a-aa6e-d6e0a28f4cf1)
+
+<br/>
+
+AbstractClass는 templateMethod를 정의하고 구현하며 templateMethod에서 사용할 추상 메서드를 선언한다.  
+AbstractClass의 추상 메서드는 하위 클래스인 ConcreteClass에서 구현된다.
+
+<br/>
+
+##### Why Template Method Pattern?
+- 중복된 코드를 없애고 하위 클래스에서는 비즈니스 로직에만 집중할 수 있다. (SRP)
+- 나중에 새로운 비즈니스 로직이 추가되어도 기존 코드를 수정하지 않아도 된다. (OCP)
+
+<br/>
+<br/>
+
+#### Explain Example
+Template Method Pattern을 사용하여 인형이 만들어지는 과정을 표시하는 예제 프로그램을 개발했다.
+
+<br/>
+
+DollProcess 클래스에는 createDoll 메서드가 정의되어 있고, createDoll 메서드 안에서 assembleHead, assembleBody, assembleArms, assembleLegs, 4 개의 메서드가 사용된다.  
+assembleHead, assembleBody, assembleArms, assembleLegs, 4 개의 메서드도 DollProcess 클래스 안에 선언되어 있지만, 실체가 없는 추상 메서드이다.  
+해당 프로그램에서는 추상 메서드를 사용하는 createDoll 메서드가 템플릿 메서드이다.
+
+<br/>
+
+assembleHead, assembleBody, assembleArms, assembleLegs 메서드를 실제로 구현하는 것은 DollProcess 클래스의 하위 클래스인 RabbitDollProcess 클래스, CatDollProcess 클래스이다.
+
+<br/>
+
+##### 클래스 목록
+| 클래스 이름 | 설명 | 역할 |
+| --- | --- | --- |
+| DollProcess | 메서드 createDoll만 구현된 추상 클래스 | AbstractClass(추상 클래스) 역 |
+| RabbitDollProcess | 메서드 assembleHead, assembleBody, assembleArms, assembleLegs를 구현하는 클래스 | ConcreteClass(구현 클래스) 역 |
+| CatDollProcess | 메서드 assembleHead, assembleBody, assembleArms, assembleLegs를 구현하는 클래스 | ConcreteClass(구현 클래스) 역 |
+| Main | 동작 테스트용 클래스 |  |
+
+<br/>
+
+##### 클래스 다이어그램
+![image](https://github.com/C0012S/PDA-JavaPattern/assets/66476874/9c1534ae-3f14-4e0e-b53f-9efa31c2a3a9)
+
+<br/>
+
+AbstractClass 역의 DollProcess는 추상 클래스이고, createDoll을 정의하고 구현한다.  
+createDoll 안에서 추상 메서드 assembleHead, assembleBody, assembleArms, assembleLegs가 사용된다.  
+추상 메서드를 사용하는 createDoll이 템플릿 메서드이다.  
+DollProcess의 추상 메서드는 해당 클래스의 하위 클래스인 RabbitDollProcess와 CatDollProcess에서 구현한다.  
+즉, 상위 클래스인 DollProcess에서 처리의 뼈대를 결정하고 하위 클래스에서 그 구체적 내용을 결정한다.
+
+<br/>
+
+##### 코드
+- DollProcess.java
+
+```java
+package DollProcess;
+
+public abstract class DollProcess {
+	public abstract void assembleHead();
+	public abstract void assembleBody();
+	public abstract void assembleArms();
+	public abstract void assembleLegs();
+	
+	public final void createDoll() {
+		assembleHead();
+		assembleBody();
+		
+		for (int i = 0; i < 2; i++) {
+			assembleArms();
+			assembleLegs();
+		}
+	}
+}
+```
+
+<br/>
+
+DollProcess 클래스에는 assembleHead, assembleBody, assembleArms, assembleLegs, createDoll 메서드가 있다.  
+assembleHead, assembleBody, assembleArms, assembleLegs 메서드는 추상 메서드이고, createDoll 메서드만 구현되어 있다.  
+
+<br/>
+
+createDoll 메서드의 정의를 보면, 다음과 같은 작업을 수행하고 있다.  
+- assembleHead 메서드를 호출한다.
+- assembleBody 메서드를 호출한다.
+- assembleArms 메서드와 assembleLegs 메서드를 2 번 호출한다.
+
+<br/>
+
+assembleHead, assembleBody, assembleArms, assembleLegs 메서드는 추상 메서드로 되어 있어서 DollProcess 클래스의 createDoll 메서드가 실제로 무슨 동작을 하는지 DollProcess 클래스만 봐서는 알 수 없다.  
+실제로 무슨 일을 하는지는 assembleHead, assembleBody, assembleArms, assembleLegs 메서드를 구현하는 하위 클래스를 봐야 알 수 있다.
+
+<br/>
+
+- RabbitDollProcess.java
+
+```java
+package DollProcess;
+
+public class RabbitDollProcess extends DollProcess {
+	private String animal;
+	
+	public RabbitDollProcess(String animal) {
+		this.animal = animal;
+	}
+	
+	@Override
+	public void assembleHead() {
+		System.out.println(animal + " 인형 머리를 조립합니다.");
+	}
+
+	@Override
+	public void assembleBody() {
+		System.out.println(animal + " 인형 몸을 조립합니다.");		
+	}
+	
+	@Override
+	public void assembleArms() {
+		System.out.println(animal + " 인형 팔을 조립합니다.");
+		System.out.println(animal + " 인형 손에 하트를 붙입니다.");
+	}
+
+	@Override
+	public void assembleLegs() {
+		System.out.println(animal + " 인형 다리를 조립합니다.");
+		System.out.println(animal + " 인형 발에 하트를 붙입니다.");
+	}
+}
+```
+
+<br/>
+
+상위 클래스인 DollProcess 클래스에서 추상 메서드로 선언된 assembleHead, assembleBody, assembleArms, assembleLegs 메서드가 모두 구현되어 있다.  
+그러므로 RabbitDollProcess 클래스는 추상 클래스가 아니며 assembleHead, assembleBody, assembleArms, assembleLegs 메서드는 상위 클래스의 메서드를 오버라이드한 메서드이기 때문에 `@Override`  어노테이션이 적혀 있다.
+
+<br/>
+
+RabbitDollProcess 클래스의 assembleHead, assembleBody, assembleArms, assembleLegs 메서드는 다음과 같은 처리를 한다.
+
+| 메서드 이름 | 처리 |
+| --- | --- |
+| assembleHead | 생성자에서 주어진 문자열 animal의 인형 머리를 조립한다는 텍스트를 표시한다. |
+| assembleBody | 생성자에서 주어진 문자열 animal의 인형 몸을 조립한다는 텍스트를 표시한다. |
+| assembleArms | 생성자에서 주어진 문자열 animal의 인형 팔을 조립하고 손에 하트를 붙인다는 텍스트를 표시한다. |
+| assembleLegs | 생성자에서 주어진 문자열 animal의 인형 다리를 조립하고 발에 하트를 붙인다는 텍스트를 표시한다. |
+
+<br/>
+
+- CatDollProcess.java
+
+```java
+package DollProcess;
+
+public class CatDollProcess extends DollProcess {
+	private String animal;
+	
+	public CatDollProcess(String animal) {
+		this.animal = animal;
+	}
+	
+	@Override
+	public void assembleHead() {
+		System.out.println(animal + " 인형 머리를 조립합니다.");
+		assembleEars();
+	}
+
+	@Override
+	public void assembleBody() {
+		System.out.println(animal + " 인형 몸을 조립합니다.");		
+	}
+	
+	@Override
+	public void assembleArms() {
+		System.out.println(animal + " 인형 팔을 조립합니다.");
+		System.out.println(animal + " 인형 손에 하트를 붙입니다.");
+	}
+
+	@Override
+	public void assembleLegs() {
+		System.out.println(animal + " 인형 다리를 조립합니다.");
+		System.out.println(animal + " 인형 발에 하트를 붙입니다.");
+	}
+	
+	private void assembleEars() {
+		for (int e = 0; e < 2; e++) {
+			System.out.println("☆ 고양이 귀를 붙입니다. ☆");
+		}
+	}
+}
+```
+
+<br/>
+
+DollProcess의 하위 클래스인 CatDollProcess 클래스에도 assembleHead, assembleBody, assembleArms, assembleLegs 메서드가 구현되어 있다.
+
+<br/>
+
+추가로 assembleEars 메서드가 정의되어 있다.  
+해당 메서드는 ‘☆ 고양이 귀를 붙입니다. ☆’ 라는 텍스트를 출력한다.
+
+<br/>
+
+RabbitDollProcess 클래스의 assembleHead, assembleBody, assembleArms, assembleLegs 메서드는 다음과 같은 처리를 한다.
+
+| 메서드 이름 | 처리 |
+| --- | --- |
+| assembleHead | 생성자에서 주어진 문자열 animal의 인형 머리를 조립한다는 텍스트를 표시하고, assembleEars 메서드를 호출해 고양이 귀를 붙인다는 텍스트도 표시한다. |
+| assembleBody | 생성자에서 주어진 문자열 animal의 인형 몸을 조립한다는 텍스트를 표시한다. |
+| assembleArms | 생성자에서 주어진 문자열 animal의 인형 팔을 조립하고 손에 하트를 붙인다는 텍스트를 표시한다. |
+| assembleLegs | 생성자에서 주어진 문자열 animal의 인형 다리를 조립하고 발에 하트를 붙인다는 텍스트를 표시한다. |
+
+<br/>
+
+- Main.java
+
+```java
+package DollProcess;
+
+public class Main {
+	public static void main(String[] args) {
+		DollProcess rabbitDoll = new RabbitDollProcess("Rabbit");
+		DollProcess catDoll = new CatDollProcess("Cat");
+		
+		rabbitDoll.createDoll();
+		System.out.println();
+		catDoll.createDoll();
+	}
+}
+```
+
+<br/>
+
+Main 클래스로 동작을 테스트한다.  
+RabbitDollProcess 클래스와 CatDollProcess 클래스의 인스턴스를 만들어 createDoll 메서드를 호출한다.
+
+<br/>
+
+##### 실행 결과
+<img width="300" alt="image" src="https://github.com/C0012S/PDA-JavaPattern/assets/66476874/a99ced56-8c16-4a49-8663-e5bcd61b551f">
+
+<br/>
+
+<img width="300" alt="image" src="https://github.com/C0012S/PDA-JavaPattern/assets/66476874/5a6acd05-f600-4679-b4c4-91f99100f84f">
+
+<br/>
 <br/>
 
 ## Commit Message Convention
