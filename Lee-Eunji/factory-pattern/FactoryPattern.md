@@ -20,6 +20,7 @@
    + 장단점
 2. 증권에 적용한 Factory Method Pattern 예제 : 금융 제품 관리와 공장 메서드 패턴 활용
    + 패턴 적용 전 비효율적인 코드 : before
+       - 문제 상황
    + Factory Method Pattern 적용 코드 : after
        - UML 클래스 다이어그램
        - 코드
