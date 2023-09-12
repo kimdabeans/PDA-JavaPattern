@@ -5,25 +5,25 @@
 #### 디자인 패턴은 3가지를 선택하여 기술하였으며, 
 #### 수업 시간에 배웠던 디자인 패턴 중 가장 헷갈렸던 디자인 패턴들을 제대로 이해하고 깊게 공부해보고자 선정하였습니다. 
 
-***
+
 
 ### 폴더 구조 :open_file_folder:
-1. [TemplateMethod](Lee-Juhyun/TEMPLATE.md)
-   - [beforeTemplateMethod](Lee-Juhyun/beforeTemplateMethod) 
-   - [afterTemplateMethod](Lee-Juhyun/afterTemplateMethod) 
-2. [Strategy Pattern](Lee-Juhyun/STRATEGY.md)
-   - [strategy](Lee-Juhyun/strategy) 
-3. [Proxy Pattern](Lee-Juhyun/PROXY.md)
-   - [beforeProxy](Lee-Juhyun/beforeProxy) 
-   - [afterProxy](Lee-Juhyun/afterProxy)
+1. [TemplateMethod](TEMPLATE.md)
+   - [beforeTemplateMethod](beforeTemplateMethod) 
+   - [afterTemplateMethod](afterTemplateMethod) 
+2. [Strategy Pattern](STRATEGY.md)
+   - [strategy](strategy) 
+3. [Proxy Pattern](PROXY.md)
+   - [beforeProxy](beforeProxy) 
+   - [afterProxy](afterProxy)
   
 ###### TemplateMethod와 Proxy Pattern은 디자인 패턴 적용 전후를 비교하기 위하여, 
 ###### 동일한 내용을 담고 있는 프로그램을 before와 after로 나눠서 작성하였습니다. 
 
 #### 문서 작성은 .md 파일을 이용하고, 3가지 디자인 패턴 각각 .md 파일을 만들어 나눠 기술하였습니다.
-[TemplateMethod](Lee-Juhyun/TEMPLATE.md) `/`
-[Strategy Pattern](Lee-Juhyun/STRATEGY.md) `/`
-[Proxy Pattern](Lee-Juhyun/PROXY.md)
+[TemplateMethod](TEMPLATE.md) `/`
+[Strategy Pattern](STRATEGY.md) `/`
+[Proxy Pattern](PROXY.md)
 
 #### 감사합니다.
 
